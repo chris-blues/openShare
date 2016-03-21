@@ -1,0 +1,377 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: webspaceManager\n"
+"POT-Creation-Date: 2016-03-21 04:19+0100\n"
+"PO-Revision-Date: 2016-03-21 04:19+0100\n"
+"Last-Translator: chris_blues <chris@musicchris.de>\n"
+"Language-Team: chris@musicchris.de <chris@musicchris.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .logout.php\n"
+"X-Poedit-SearchPath-1: .uploadfile.php\n"
+"X-Poedit-SearchPath-2: functions.php\n"
+"X-Poedit-SearchPath-3: index.php\n"
+"X-Poedit-SearchPath-4: join.php\n"
+
+#: .uploadfile.php:26
+msgid "Error!\n"
+msgstr "Fehler!\n"
+
+#: .uploadfile.php:27
+msgid "OK!\n"
+msgstr "OK!\n"
+
+#: functions.php:360
+msgid "Going in!"
+msgstr "Los gehts!"
+
+#: index.php:125 join.php:221
+msgid "This name is already used. Please choose another!"
+msgstr "Dieser Name wird schon benutzt. Bitte suchen Sie sich einen anderen!"
+
+#: index.php:140 join.php:236 join.php:326
+msgid "The passwords don't match! Please try again!"
+msgstr "Die Passwörter stimmen nicht überein! Bitte noch einmal versuchen!"
+
+#: index.php:153 join.php:251
+msgid "name:"
+msgstr "Name:"
+
+#: index.php:154 join.php:252
+msgid "password:"
+msgstr "Passwort:"
+
+#: index.php:155 index.php:741 join.php:253 join.php:341
+msgid "confirm password:"
+msgstr "Passwort bestätigen:"
+
+#: index.php:408
+#, php-format
+msgid "Invitation to join our webspace at %s"
+msgstr "Einladung, unseren Webspace auf %s mit zu benutzen"
+
+#: index.php:418
+msgid "Hi!"
+msgstr "Hallo!"
+
+#: index.php:420
+#, php-format
+msgid ""
+"You have been invited by %s to join our webspace at %s - all you have to do "
+"is click on the following link. Make sure it's not broken in two (some email-"
+"clients do such nasty things!)\n"
+msgstr ""
+"Sie wurden von %s eingeladen, unseren Webspace auf %s mit zu benutzen - Sie "
+"brauchen nur auf den folgenden Link zu klicken. Stellen Sie bitte sicher, "
+"daß er nicht zerteilt wurde (Manche Emailprogramme machen gemeine Sachen!)\n"
+
+#: index.php:421
+#, php-format
+msgid ""
+"Then you will have to choose a username and password, and you're good to "
+"go.\n"
+"\n"
+"%s\n"
+"\n"
+msgstr ""
+"Dann brauchst Du Dir nur noch einen Benutzernamen und ein Passwort "
+"einrichten und schon kanns losgehen.\n"
+"\n"
+"%s\n"
+"\n"
+
+#: index.php:422
+#, php-format
+msgid ""
+"If you should forget your password click on this link to reset it:\n"
+"\n"
+"%s\n"
+"\n"
+"\n"
+msgstr ""
+"Falls Du mal Dein Passwort vergessen solltest, klicke auf diesen Link, um "
+"das Passwort zurückzusetzen:\n"
+"\n"
+"%s\n"
+"\n"
+"\n"
+
+#: index.php:423
+#, php-format
+msgid ""
+"Keep this mail in a safe place, for you might need it some day!\n"
+"\n"
+"\n"
+"Best regards,\n"
+"\n"
+"%s\n"
+"\n"
+"\n"
+"Please don't respond to this mail!"
+msgstr ""
+"Bewahren Sie diese Email an einem sicheren Ort auf, Sie könnten Sie eines "
+"Tages noch gut gebrauchen!\n"
+"\n"
+"\n"
+"Beste Grüße,\n"
+"\n"
+"%s\n"
+"\n"
+"\n"
+"Bitte antworten Sie nicht auf diese Email!"
+
+#: index.php:619
+msgid "remaining"
+msgstr "verbleibend"
+
+#: index.php:624
+msgid "unable to compute"
+msgstr "nicht berechenbar"
+
+#: index.php:638
+msgid "There was an error attempting to upload the file."
+msgstr "Es gab einen Fehler beim Hochladen der Datei."
+
+#: index.php:643
+msgid ""
+"The upload has been canceled by the user or the browser dropped the "
+"connection."
+msgstr ""
+"Das Hochladen wurde vom Benutzer unterbrochen, oder der Browser hat die "
+"Verbindung verloren."
+
+#: index.php:663
+msgid "Do you really want to delete this???"
+msgstr "Wollen Sie das wirklich löschen???"
+
+#: index.php:735 index.php:743
+msgid "change password"
+msgstr "Passwort ändern"
+
+#: index.php:739 join.php:340
+msgid "new password:"
+msgstr "neues Passwort:"
+
+#: index.php:750
+msgid "admin options"
+msgstr "Admin Optionen"
+
+#: index.php:753 index.php:758
+msgid "invite user"
+msgstr "Benutzer einladen"
+
+#: index.php:757
+msgid "email:"
+msgstr "Email:"
+
+#: index.php:763 index.php:777
+msgid "remove user"
+msgstr "Benutzer entfernen"
+
+#: index.php:782
+msgid "manage admins"
+msgstr "Admins verwalten"
+
+#: index.php:796
+msgid "make admin"
+msgstr "Admin"
+
+#: index.php:797
+msgid "make user"
+msgstr "User"
+
+#: index.php:805
+msgid "view log"
+msgstr "Log ansehen"
+
+#: index.php:816
+msgid "log out"
+msgstr "Abmelden"
+
+#: index.php:825 index.php:908
+msgid "file commands"
+msgstr "Dateibefehle"
+
+#: index.php:830
+msgid "Enter new file name:"
+msgstr "Neuen Dateinamen angeben:"
+
+#: index.php:833
+msgid "rename File"
+msgstr "Datei umbenennen"
+
+#: index.php:838
+msgid "Upload file:"
+msgstr "Datei hochladen: "
+
+#: index.php:838 index.php:896
+msgid "max 90 MiB!"
+msgstr "max 90 MiB!"
+
+#: index.php:853
+msgid "Create dir:"
+msgstr "Verzeichnis erstellen:"
+
+#: index.php:888
+msgid "Move selected to:"
+msgstr "Ausgewählte verschieben nach:"
+
+#: index.php:892
+msgid "Move selected files"
+msgstr "Ausgewählte Dateien verschieben"
+
+#: index.php:895
+msgid "Download selected files as zip archive."
+msgstr "Ausgewählte Dateien als zip Archiv herunterladen."
+
+#: index.php:896
+msgid "Download selected as zip"
+msgstr "Ausgewählte als zip herunterladen"
+
+#: index.php:899
+msgid "Careful!!! Can NOT be restored!"
+msgstr "Achtung!!! Kann NICHT rückgängig gemacht werden!"
+
+#: index.php:900
+msgid "Delete selected files"
+msgstr "Ausgewählte Dateien löschen"
+
+#: index.php:908
+msgid "status"
+msgstr "Zustand"
+
+#: index.php:908
+msgid "filename (download)"
+msgstr "Dateiname (download)"
+
+#: index.php:908
+msgid "size"
+msgstr "Größe"
+
+#: index.php:908
+msgid "date"
+msgstr "Zeit"
+
+#: index.php:920
+msgid "mark all files"
+msgstr "Alle Dateien markieren"
+
+#: index.php:943
+msgid ""
+"dir\n"
+"Access: "
+msgstr ""
+"Verzeichnis\n"
+"Zugriff: "
+
+#: index.php:946 index.php:977
+msgid "rename"
+msgstr "umbenennen"
+
+#: index.php:965
+msgid "size:"
+msgstr "Größe:"
+
+#: index.php:968
+msgid "Access: "
+msgstr "Zugriff: "
+
+#: index.php:972
+msgid "file - completely transferred"
+msgstr "Datei - vollständig übertragen"
+
+#: index.php:976
+msgid "open file"
+msgstr "öffne Datei"
+
+#: index.php:979
+msgid "download"
+msgstr "Download"
+
+#: index.php:984
+msgid "file in transfer..."
+msgstr "Datei wird übertragen..."
+
+#: index.php:1031
+msgid "files"
+msgstr "Dateien"
+
+#: index.php:1031
+msgid "processing needed"
+msgstr "Verarbeitung brauchte"
+
+#: join.php:133
+msgid ""
+"Your name was not found!<br>\n"
+"Unauthorized access!<br>\n"
+"<br>\n"
+"Exiting...<br>\n"
+msgstr ""
+"Ihr Name wurde nicht gefunden!<br>\n"
+"Nicht authorisierter Zugriff!<br>\n"
+"<br>\n"
+"Beende...<br>\n"
+
+#: join.php:163
+msgid ""
+"<h1>There was some error!</h1>\n"
+"\n"
+"    <p>Most propably your link in the mail was corrupted. Some email-clients "
+"do break longer lines, and in the process break links. Try to copy and paste "
+"the whole link into your browser by hand!</p>\n"
+"\n"
+"    <p>Another possibility is, that something changed on the server. If you "
+"already tried the suggestion above, then please contact the admin, to check "
+"if your hash is intact and still in the users file!</p>\n"
+msgstr ""
+"<h1>Es gab einen Fehler!</h1>\n"
+"\n"
+"    <p>Wahrscheinlich wurde der Link in Ihrer Email geteilt. Manche "
+"Emailprogramme zerbrechen längere Zeilen, und damit auch längere Links. "
+"Kopieren Sie den Link als Ganzes und kopieren Sie in Ihren Browser!</p>\n"
+"\n"
+"    <p>Es kann auch sein, daß sich auf dem Server etwas geändert hat. Falls "
+"Sie den Vorschlag oben schon befolgt haben, kontaktieren Sie bitte den "
+"Admin, um prüfen zu lassen, ob der Hash intakt und noch in der user Datei "
+"ist.</p>\n"
+
+#: join.php:244 join.php:334
+msgid "Enter your data"
+msgstr "Geben Sie Ihre Daten an"
+
+#: join.php:368
+msgid ""
+"<h1>Sorry, you're not allowed to enter!</h1>\n"
+"\n"
+"    <p>Maybe something went wrong (e.g. you waited too long to come here, or "
+"someone already removed you again from our waiting list).</p>\n"
+"\n"
+"    <p>Ask your admin or invitor to add you again, if you think you should "
+"be allowed in here.</p>\n"
+msgstr ""
+"<h1>Verzeihung, Sie dürfen hiernicht rein!</h1>\n"
+"\n"
+"    <p>Vielleicht ist etwas schiefgegangen (z.Bsp. haben sie vllt zu lang "
+"gewartet hierher zu kommen, oder jemand hat Sie schon von der Warteliste "
+"entfernt).</p>\n"
+"\n"
+"    <p>Fragen Sie den Admin oder Einladenden, Sie wieder einzutragen, wenn "
+"Sie denken, daß Sie hier rein gehören.</p>\n"
+
+#~ msgid "You have been invited by "
+#~ msgstr "Du wurdest von "
+
+#~ msgid " to join our webspace at "
+#~ msgstr " eingeladen, unseren Webspace auf "
+
+#~ msgid "Best regards,"
+#~ msgstr "Beste Grüße,"
+
+#~ msgid "Please don't respond to this mail!"
+#~ msgstr "Bitte antworte nicht auf diese Mail!"

@@ -1,0 +1,256 @@
+@charset "utf-8";
+@font-face { font-family: 'OpenSans'; src: url('.font/open_sans/opensans-regular.ttf') format('truetype'); }
+@font-face { font-family: 'OpenSans-Bold'; src: url('.font/open_sans/opensans-bold.ttf') format('truetype'); }
+@font-face { font-family: 'OpenSans-Italic'; src: url('.font/open_sans/opensans-italic.ttf') format('truetype'); }
+@font-face { font-family: 'OpenSans-BoldItalic'; src: url('.font/open_sans/opensans-bolditalic.ttf') format('truetype'); }
+@font-face { font-family: 'OpenSans-Semibold'; src: url('.font/open_sans/opensans-semibold.ttf') format('truetype'); }
+@font-face { font-family: 'OpenSans-SemiboldItalic'; src: url('.font/open_sans/opensans-semibolditalic.ttf') format('truetype'); }
+a:link { color: #332211; text-decoration: underline; }
+a:visited { color: #332211; text-decoration: underline; }
+a:hover { color: #666633; text-decoration: none; }
+
+.shadow {
+  padding: 10px 30px;
+  background-color: #FFF;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px 1px #000;
+}
+
+.clear {
+  clear: both;
+}
+
+* {
+  font: normal 0.99em OpenSans;
+}
+
+img {
+  border: 0px none #FFF;
+}
+
+h1 {
+  font: normal 1.6em OpenSans-Bold;
+}
+
+h2 {
+  font: normal 1.4em OpenSans-Bold;
+}
+
+h3 {
+  font: normal 1.3em OpenSans-Bold;
+}
+
+h4 {
+  font: normal 1.2em OpenSans-Bold;
+  display: inline;
+}
+
+h5 {
+  font: normal 1.1em OpenSans-Bold;
+  display: inline;
+}
+
+b {
+  font: normal 1.0em OpenSans-Bold;
+}
+
+.italic,i {
+  font: normal 1.0em OpenSans-Italic;
+}
+
+b i, i b {
+  font: normal 1.0em OpenSans-BoldItalic;
+}
+
+strong,em {
+  font: normal 1.0em OpenSans-Semibold;
+}
+
+i strong,i em, strong i,em i {
+  font: normal 1.0em OpenSans-SemiboldItalic;
+}
+
+pre {
+  border: solid 1px gray;
+}
+
+th, td {
+  padding-right: 25px;
+}
+
+#main {
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px 1px #000;
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+
+.folders {
+  margin: 10px 0px 10px 10px;
+  padding: 5px 10px;
+  display: inline;
+}
+
+#userSettings {
+  display: none;
+  /*width: 250px;*/
+  text-align: left;
+}
+
+ul.userSettings {
+  list-style: none;
+  padding: 5px 20px;
+}
+
+ul.userSettings li {
+  padding: 2px 15px;
+  border-radius: 10px;
+}
+
+ul.userSettings li:hover {
+  background-color: #F0F0F0;
+}
+
+#usermenuBox {
+  float: right;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 5px 1px #888;
+  border-radius: 0px 0px 0px 6px;
+  padding: 5px 15px;
+  text-align: center;
+  background-image: url('.icons/usermenu.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 100% -3px;
+  background-size: auto;
+}
+
+#usermenu {
+  margin: 0px 30px 5px 0px;
+  padding: 0px 10px;
+  border-radius: 10px;
+}
+#usermenu:hover {
+  color: #666633;
+  background-color: #F0F0F0;
+}
+
+.userMenuBox {
+  display: none;
+  border-radius: 5px;
+  border: 1px solid #333;
+  width: 300px;
+}
+
+.inputFieldSettings {
+  width: 96%;
+}
+
+.topSpacer {
+  clear: both;
+  margin: 20px;
+}
+
+#fileCommandsHeaderBox {
+  margin: 5px 10px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+#fileCommandsHeaderBox:hover {
+  background-color: #EEEEEE;
+}
+
+#rename {
+  display: none;
+  clear: both;
+  background-color: red;
+  box-shadow: 0px 0px 5px 1px #000;
+  margin: 25px;
+  padding: 10px;
+  text-align: center;
+}
+
+#fileCommand {
+  clear: both;
+}
+
+.commandBox {
+  float: left;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px 1px #555;
+  padding: 10px;
+  margin: 5px 10px;
+}
+.commandBox:hover {
+  background-color: #EEEEEE;
+}
+
+#deleteFile:hover {
+  background-color: red;
+}
+
+.createFiles {
+  display: inline;
+}
+
+#progressNumber {
+  text-align: center;
+  display: none;
+}
+
+#progress {
+  border: 1px solid black;
+  padding: 0px;
+  text-align: left;
+  display: none;
+}
+
+#progressbar {
+  background-color: green;
+  margin: 0px;
+  padding: 0px;
+  width: 0%;
+  height: 10px;
+}
+
+#newDir {
+  width: 300px;
+}
+
+div#fileTableWrapper {
+  margin: 10px;
+  padding: 10px;
+}
+
+table#fileTable {
+  clear: both;
+  text-align: left;
+  padding: 10px;
+  width: 100%;
+}
+
+tr.hilight:hover td {
+  background-color: #ffff99;
+        }
+
+div#footer {
+  font-size: 0.75em;
+  text-align: center;
+  margin: 10px;
+}
+
+.icon {
+  width: 18px;
+}
+
+.inTransfer {
+  color: #AAAAAA;
+}
+
+#errorMessages {
+  font-size: 0.65em;
+}

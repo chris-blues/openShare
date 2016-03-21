@@ -1,0 +1,315 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: webspaceManager\n"
+"POT-Creation-Date: 2016-03-21 04:19+0100\n"
+"PO-Revision-Date: 2016-03-21 04:19+0100\n"
+"Last-Translator: chris_blues <chris@musicchris.de>\n"
+"Language-Team: chris@musicchris.de <chris@musicchris.de>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .logout.php\n"
+"X-Poedit-SearchPath-1: .uploadfile.php\n"
+"X-Poedit-SearchPath-2: functions.php\n"
+"X-Poedit-SearchPath-3: index.php\n"
+"X-Poedit-SearchPath-4: join.php\n"
+
+#: .uploadfile.php:26
+msgid "Error!\n"
+msgstr ""
+
+#: .uploadfile.php:27
+msgid "OK!\n"
+msgstr ""
+
+#: functions.php:360
+msgid "Going in!"
+msgstr ""
+
+#: index.php:125 join.php:221
+msgid "This name is already used. Please choose another!"
+msgstr ""
+
+#: index.php:140 join.php:236 join.php:326
+msgid "The passwords don't match! Please try again!"
+msgstr ""
+
+#: index.php:153 join.php:251
+msgid "name:"
+msgstr ""
+
+#: index.php:154 join.php:252
+msgid "password:"
+msgstr ""
+
+#: index.php:155 index.php:741 join.php:253 join.php:341
+msgid "confirm password:"
+msgstr ""
+
+#: index.php:408
+#, php-format
+msgid "Invitation to join our webspace at %s"
+msgstr ""
+
+#: index.php:418
+msgid "Hi!"
+msgstr ""
+
+#: index.php:420
+#, php-format
+msgid ""
+"You have been invited by %s to join our webspace at %s - all you have to do "
+"is click on the following link. Make sure it's not broken in two (some email-"
+"clients do such nasty things!)\n"
+msgstr ""
+
+#: index.php:421
+#, php-format
+msgid ""
+"Then you will have to choose a username and password, and you're good to "
+"go.\n"
+"\n"
+"%s\n"
+"\n"
+msgstr ""
+
+#: index.php:422
+#, php-format
+msgid ""
+"If you should forget your password click on this link to reset it:\n"
+"\n"
+"%s\n"
+"\n"
+"\n"
+msgstr ""
+
+#: index.php:423
+#, php-format
+msgid ""
+"Keep this mail in a safe place, for you might need it some day!\n"
+"\n"
+"\n"
+"Best regards,\n"
+"\n"
+"%s\n"
+"\n"
+"\n"
+"Please don't respond to this mail!"
+msgstr ""
+
+#: index.php:619
+msgid "remaining"
+msgstr ""
+
+#: index.php:624
+msgid "unable to compute"
+msgstr ""
+
+#: index.php:638
+msgid "There was an error attempting to upload the file."
+msgstr ""
+
+#: index.php:643
+msgid ""
+"The upload has been canceled by the user or the browser dropped the "
+"connection."
+msgstr ""
+
+#: index.php:663
+msgid "Do you really want to delete this???"
+msgstr ""
+
+#: index.php:735 index.php:743
+msgid "change password"
+msgstr ""
+
+#: index.php:739 join.php:340
+msgid "new password:"
+msgstr ""
+
+#: index.php:750
+msgid "admin options"
+msgstr ""
+
+#: index.php:753 index.php:758
+msgid "invite user"
+msgstr ""
+
+#: index.php:757
+msgid "email:"
+msgstr ""
+
+#: index.php:763 index.php:777
+msgid "remove user"
+msgstr ""
+
+#: index.php:782
+msgid "manage admins"
+msgstr ""
+
+#: index.php:796
+msgid "make admin"
+msgstr ""
+
+#: index.php:797
+msgid "make user"
+msgstr ""
+
+#: index.php:805
+msgid "view log"
+msgstr ""
+
+#: index.php:816
+msgid "log out"
+msgstr ""
+
+#: index.php:825 index.php:908
+msgid "file commands"
+msgstr ""
+
+#: index.php:830
+msgid "Enter new file name:"
+msgstr ""
+
+#: index.php:833
+msgid "rename File"
+msgstr ""
+
+#: index.php:838
+msgid "Upload file:"
+msgstr ""
+
+#: index.php:838 index.php:896
+msgid "max 90 MiB!"
+msgstr ""
+
+#: index.php:853
+msgid "Create dir:"
+msgstr ""
+
+#: index.php:888
+msgid "Move selected to:"
+msgstr ""
+
+#: index.php:892
+msgid "Move selected files"
+msgstr ""
+
+#: index.php:895
+msgid "Download selected files as zip archive."
+msgstr ""
+
+#: index.php:896
+msgid "Download selected as zip"
+msgstr ""
+
+#: index.php:899
+msgid "Careful!!! Can NOT be restored!"
+msgstr ""
+
+#: index.php:900
+msgid "Delete selected files"
+msgstr ""
+
+#: index.php:908
+msgid "status"
+msgstr ""
+
+#: index.php:908
+msgid "filename (download)"
+msgstr ""
+
+#: index.php:908
+msgid "size"
+msgstr ""
+
+#: index.php:908
+msgid "date"
+msgstr ""
+
+#: index.php:920
+msgid "mark all files"
+msgstr ""
+
+#: index.php:943
+msgid ""
+"dir\n"
+"Access: "
+msgstr ""
+
+#: index.php:946 index.php:977
+msgid "rename"
+msgstr ""
+
+#: index.php:965
+msgid "size:"
+msgstr ""
+
+#: index.php:968
+msgid "Access: "
+msgstr ""
+
+#: index.php:972
+msgid "file - completely transferred"
+msgstr ""
+
+#: index.php:976
+msgid "open file"
+msgstr ""
+
+#: index.php:979
+msgid "download"
+msgstr ""
+
+#: index.php:984
+msgid "file in transfer..."
+msgstr ""
+
+#: index.php:1031
+msgid "files"
+msgstr ""
+
+#: index.php:1031
+msgid "processing needed"
+msgstr ""
+
+#: join.php:133
+msgid ""
+"Your name was not found!<br>\n"
+"Unauthorized access!<br>\n"
+"<br>\n"
+"Exiting...<br>\n"
+msgstr ""
+
+#: join.php:163
+msgid ""
+"<h1>There was some error!</h1>\n"
+"\n"
+"    <p>Most propably your link in the mail was corrupted. Some email-clients "
+"do break longer lines, and in the process break links. Try to copy and paste "
+"the whole link into your browser by hand!</p>\n"
+"\n"
+"    <p>Another possibility is, that something changed on the server. If you "
+"already tried the suggestion above, then please contact the admin, to check "
+"if your hash is intact and still in the users file!</p>\n"
+msgstr ""
+
+#: join.php:244 join.php:334
+msgid "Enter your data"
+msgstr ""
+
+#: join.php:368
+msgid ""
+"<h1>Sorry, you're not allowed to enter!</h1>\n"
+"\n"
+"    <p>Maybe something went wrong (e.g. you waited too long to come here, or "
+"someone already removed you again from our waiting list).</p>\n"
+"\n"
+"    <p>Ask your admin or invitor to add you again, if you think you should "
+"be allowed in here.</p>\n"
+msgstr ""
