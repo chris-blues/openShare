@@ -1,0 +1,11 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: *
+Copyright: 2016, chris_blues <chris@musicchris.de>
+Comment: https://github.com/chris-blues/openShare
+License: GPL-3
+
+Files: .font/open_sans/*
+Copyright: 2010 Steve Matteson
+Comment: https://profiles.google.com/107777320916704234605/about
+License: Apache License 2.0
