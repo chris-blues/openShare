@@ -387,6 +387,7 @@ if ($_POST["job"] == "removeUser" and $admin)
    $handle = fopen($pathUserfile, "w");
    foreach ($userlist as $key => $value)
      {
+      if (strlen($value) < 2) continue;
       if (strncmp($value, $_POST["name"], strlen($_POST["name"])) != 0) fwrite ($handle, trim($value) . "\n");
      }
    fclose ($handle);

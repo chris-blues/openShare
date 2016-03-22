@@ -295,7 +295,10 @@ if (isset($_GET["job"]) and $_GET["job"] == "resetPasswd")
       $users[] = $concerningUser["name"] . " " . $concerningUser["email"] . " " . $concerningUser["hash"];
       sort($users, SORT_NATURAL | SORT_FLAG_CASE);
       $handle = fopen($pathUserfile, "w");
-      foreach ($users as $key => $value) fwrite ($handle, trim($value) . "\n");
+      foreach ($users as $key => $value)
+        {
+         if (strlen($value) > 2) fwrite ($handle, trim($value) . "\n");
+        }
       fclose($handle);
      }
 ?>
