@@ -119,7 +119,7 @@ if (isset($_POST["job"]) and $_POST["job"] == "addUser")
       fwrite($handle, $_POST["name"] . " " . $_POST["email"] . " " . $_POST["hash"] . "\n");
       fclose($handle);
 
-      writeLog("join.php: main(98: addUser)");
+      writeLog("join.php: main(91: addUser)");
       cleanUpQueue($_POST["email"], $pathQueue);
       reloadIndex();
       exit;
@@ -166,7 +166,7 @@ if ($_POST["job"] == "newPasswd")
 </body>
 </html>
 <?php }
-   writeLog("join.php: main(115: newPasswd)");
+   writeLog("join.php: main(129: newPasswd)");
    exit;
   }
 
@@ -261,7 +261,7 @@ function checkInput ()
 </body>
 </html>
 <?php }
-   writeLog("join.php: main(159: verification)");
+   writeLog("join.php: main(173: verification)");
   }
 
 if (isset($_GET["job"]) and $_GET["job"] == "resetPasswd")
@@ -349,10 +349,10 @@ function checkInput ()
 </body>
 </html>
 <?php
-   writeLog("join.php: main(252: resetPasswd)");
+   writeLog("join.php: main(267: resetPasswd)");
   }
 
-if (!isset($_GET["verification"]) and !isset($_GET["job"]))
+if (!isset($_GET["verification"]) and !isset($_GET["job"]) and !isset($_POST["job"]) and !isset($_POST["hash"]))
 
   { ?>
 <html>
@@ -371,5 +371,5 @@ if (!isset($_GET["verification"]) and !isset($_GET["job"]))
 </body>
 </html>
 <?php }
-  writeLog("join.php: main (339: verification failed)");
+  writeLog("join.php: main (355: unauthorizedAccess/brokenLink)");
 ?>

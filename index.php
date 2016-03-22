@@ -253,7 +253,7 @@ if ($_POST["job"] == "rename")
       $phpErrorMsg .= "Error renaming $cwd/$path/{$_POST["oldFilename"]}\n";
       $error["rename"] = true;
       $error["debug"] = debug_backtrace();
-      writeLog("main(520: job=rename)");
+      writeLog("index.php: main(243: job=rename)");
      }
    //$reload = true;
   }
@@ -265,7 +265,7 @@ if ($_POST["job"] == "createDir")
       $phpErrorMsg .= "Error creating dir: $cwd/{$_POST["path"]}/{$_POST["newDir"]}\n";
       $error["mkdir"] = true;
       $error["debug"] = debug_backtrace();
-      writeLog("main(534: job=createDir)");
+      writeLog("index.php: main(261: job=createDir)");
      }
    else
      {
@@ -331,7 +331,7 @@ if ($_POST["job"] == "downloadZip")
       $phpErrorMsg .= "create_zip(" . $_POST["filename"] . ", $zipName) failed!\n";
      }
    $downloadZipFile = "$zipName";
-   writeLog("index.php: main(280: downloadZip)");
+   writeLog("index.php: main(294: downloadZip)");
   }
 
 if ($_POST["job"] == "changePasswd")
@@ -364,7 +364,7 @@ if ($_POST["job"] == "changePasswd")
         }
       fclose($handle);
 
-      writeLog("main(442 changePasswd)");
+      writeLog("index.php: main(337 changePasswd)");
      }
   }
 
@@ -391,7 +391,7 @@ if ($_POST["job"] == "removeUser" and $admin)
      }
    fclose ($handle);
 
-   writeLog("main(475 removeUser)");
+   writeLog("index.php: main(371 removeUser)");
 
    $reload = true;
   }
@@ -430,7 +430,7 @@ if ($_POST["job"] == "inviteUser")
       if ($result === true) $phpErrorMsg .= "TRUE";
       else $phpErrorMsg .= "FALSE";
       $phpErrorMsg .= "\n";
-      writeLog("main(694: job=inviteUser)");
+      writeLog("index.php: main(399: job=inviteUser)");
      }
    if (file_exists(".queue")) $queue = file(".queue", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
    else $queue = array();
@@ -448,7 +448,7 @@ if ($_POST["job"] == "inviteUser")
    foreach ($queue as $key => $value) fwrite($handle, trim($value) . "\n");
    fwrite ($handle, "$email $hash " . time() . "\n");
    fclose($handle);
-   writeLog("index.php main(400: inviteUser)");
+   writeLog("index.php: main(399: inviteUser)");
   }
 
 /* if ($_POST["job"] == "addUser")
@@ -478,7 +478,7 @@ if ($_POST["job"] == "inviteUser")
         }
       fclose($handle);
 
-      writeLog("main(495 addUser)");
+      writeLog("index.php: main(454 addUser)");
       cleanUpQueue($_POST["email"], $_POST["hash"], $pathQueue);
 
       $reload = true;
@@ -1038,7 +1038,7 @@ printf("      %.2f %s in %d %s - %s - %s %.3f %s", $totalFileSize, $totalUnit, $
       {
        echo "Errors:"; foreach ($error as $key => $value) { echo ", $key"; } echo "<br>\n";
        echo "<b>\$phpErrorMsg:</b><br>\n<pre>$phpErrorMsg</pre>\n";
-       writeLog("main(1191)");
+       writeLog("index.php: main(1037)");
       }
 
 if ($debug and isset($debugs))

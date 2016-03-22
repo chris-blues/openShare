@@ -273,7 +273,7 @@ function writeHtpasswd ($fullFileName, $htpasswd)
      }
    fclose ($handle);
 
-   writeLog ("writeHtpasswd($fullFileName)");
+   writeLog ("functions.php: writeHtpasswd($fullFileName)");
   }
 
 function writeHtaccess ($fullFileName, $htaccess)
@@ -284,7 +284,7 @@ function writeHtaccess ($fullFileName, $htaccess)
    foreach ($htaccess as $line => $data) { fwrite ($handle, "$data\n"); }
    fclose ($handle);
 
-   writeLog ("writeHtaccess($fullFileName)");
+   writeLog ("functions.php: writeHtaccess($fullFileName)");
   }
 
 function changeAdmin ($fullFileName, $name, $job)
@@ -306,7 +306,7 @@ function changeAdmin ($fullFileName, $name, $job)
    fwrite($handle, "?>");
    fclose ($handle);
 
-   $logString = "changeAdmin(" . str_replace("$rootPath/", "", $fullFileName) . ", $name, $job)";
+   $logString = "functions.php: changeAdmin(" . str_replace("$rootPath/", "", $fullFileName) . ", $name, $job)";
    writeLog ($logString);
    $debugs["rootPath"] = $rootPath;
    $debugs["fullFileName"] = $fullFileName;
