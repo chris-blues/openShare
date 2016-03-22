@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: webspaceManager\n"
-"POT-Creation-Date: 2016-03-21 04:19+0100\n"
-"PO-Revision-Date: 2016-03-21 04:19+0100\n"
+"POT-Creation-Date: 2016-03-22 15:42+0100\n"
+"PO-Revision-Date: 2016-03-22 15:42+0100\n"
 "Last-Translator: chris_blues <chris@musicchris.de>\n"
 "Language-Team: chris@musicchris.de <chris@musicchris.de>\n"
 "Language: de\n"
@@ -27,40 +27,40 @@ msgstr "Fehler!\n"
 msgid "OK!\n"
 msgstr "OK!\n"
 
-#: functions.php:360
+#: functions.php:359
 msgid "Going in!"
 msgstr "Los gehts!"
 
-#: index.php:125 join.php:221
+#: index.php:124 join.php:220
 msgid "This name is already used. Please choose another!"
 msgstr "Dieser Name wird schon benutzt. Bitte suchen Sie sich einen anderen!"
 
-#: index.php:140 join.php:236 join.php:326
+#: index.php:139 join.php:235 join.php:325
 msgid "The passwords don't match! Please try again!"
 msgstr "Die Passwörter stimmen nicht überein! Bitte noch einmal versuchen!"
 
-#: index.php:153 join.php:251
+#: index.php:152 join.php:250
 msgid "name:"
 msgstr "Name:"
 
-#: index.php:154 join.php:252
+#: index.php:153 join.php:251
 msgid "password:"
 msgstr "Passwort:"
 
-#: index.php:155 index.php:741 join.php:253 join.php:341
+#: index.php:154 index.php:741 join.php:252 join.php:340
 msgid "confirm password:"
 msgstr "Passwort bestätigen:"
 
-#: index.php:408
+#: index.php:407
 #, php-format
 msgid "Invitation to join our webspace at %s"
 msgstr "Einladung, unseren Webspace auf %s mit zu benutzen"
 
-#: index.php:418
+#: index.php:417
 msgid "Hi!"
 msgstr "Hallo!"
 
-#: index.php:420
+#: index.php:419
 #, php-format
 msgid ""
 "You have been invited by %s to join our webspace at %s - all you have to do "
@@ -71,7 +71,7 @@ msgstr ""
 "brauchen nur auf den folgenden Link zu klicken. Stellen Sie bitte sicher, "
 "daß er nicht zerteilt wurde (Manche Emailprogramme machen gemeine Sachen!)\n"
 
-#: index.php:421
+#: index.php:420
 #, php-format
 msgid ""
 "Then you will have to choose a username and password, and you're good to "
@@ -86,7 +86,7 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: index.php:422
+#: index.php:421
 #, php-format
 msgid ""
 "If you should forget your password click on this link to reset it:\n"
@@ -102,7 +102,7 @@ msgstr ""
 "\n"
 "\n"
 
-#: index.php:423
+#: index.php:422
 #, php-format
 msgid ""
 "Keep this mail in a safe place, for you might need it some day!\n"
@@ -154,7 +154,7 @@ msgstr "Wollen Sie das wirklich löschen???"
 msgid "change password"
 msgstr "Passwort ändern"
 
-#: index.php:739 join.php:340
+#: index.php:739 join.php:339
 msgid "new password:"
 msgstr "neues Passwort:"
 
@@ -219,8 +219,8 @@ msgid "Create dir:"
 msgstr "Verzeichnis erstellen:"
 
 #: index.php:888
-msgid "Move selected to:"
-msgstr "Ausgewählte verschieben nach:"
+msgid "Move to:"
+msgstr "Ausgewählte verschieben"
 
 #: index.php:892
 msgid "Move selected files"
@@ -306,7 +306,7 @@ msgstr "Dateien"
 msgid "processing needed"
 msgstr "Verarbeitung brauchte"
 
-#: join.php:133
+#: join.php:132
 msgid ""
 "Your name was not found!<br>\n"
 "Unauthorized access!<br>\n"
@@ -318,7 +318,7 @@ msgstr ""
 "<br>\n"
 "Beende...<br>\n"
 
-#: join.php:163
+#: join.php:162
 msgid ""
 "<h1>There was some error!</h1>\n"
 "\n"
@@ -341,11 +341,11 @@ msgstr ""
 "Admin, um prüfen zu lassen, ob der Hash intakt und noch in der user Datei "
 "ist.</p>\n"
 
-#: join.php:244 join.php:334
+#: join.php:243 join.php:333
 msgid "Enter your data"
 msgstr "Geben Sie Ihre Daten an"
 
-#: join.php:368
+#: join.php:367
 msgid ""
 "<h1>Sorry, you're not allowed to enter!</h1>\n"
 "\n"

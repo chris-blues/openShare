@@ -4,20 +4,19 @@ $start = microtime(true);
 $debug = false;
 //$debug = true;
 
+//error_reporting(E_ALL);
+error_reporting(E_ALL & ~E_NOTICE);
 ini_set("log_errors", 1);
 ini_set("error_log", getcwd() . "/.php-error.log");
 if ($debug)
   {
-   //error_reporting(E_ALL);
-   error_reporting(E_ALL & ~E_NOTICE);
    ini_set("display_errors", 1);
-   //echo "<pre>\n";
   }
 else
   {
-   error_reporting(0);
    ini_set("display_errors", 0);
   }
+
 
 ini_set('max_execution_time', '300');
 ini_set('sendmail_from', 'admin@' . $_SERVER["SERVER_NAME"]);
@@ -218,7 +217,7 @@ $depth = 0;
 if ($_POST["job"] == "logout")
   {
    $logoutPath = str_replace("index.php", "", $_SERVER["SCRIPT_NAME"]);
-   $logoutTarget = $_SERVER["HTTP_X_FORWARDED_PROTO"] . "://logout@" . $_SERVER["SERVER_NAME"] . $logoutPath . ".logout.php";
+   $logoutTarget = $_SERVER["HTTP_X_FORWARDED_PROTO"] . "://@" . $_SERVER["SERVER_NAME"] . $logoutPath . ".logout.php";
   }
 
 if ($_POST["job"] == "del")
@@ -886,7 +885,7 @@ foreach ($dir as $key => $filename) // sort by dirs and files
     <form id="fileCommand" action="index.php?dir=<?php echo $path; ?>" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
       <input id="job" type="hidden" name="job" value="">
       <div class="commandBox">
-        <label for="moveTo"><?php echo gettext("Move selected to:"); ?></label>
+        <label for="moveTo"><?php echo gettext("Move to:"); ?></label>
         <select name="moveTo" id="moveTo">
           <?php recurseFolderStructure($FolderStructure); ?>
         </select>

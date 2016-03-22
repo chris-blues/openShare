@@ -40,7 +40,6 @@ function populateHtaccess ($pathHtpasswd)
    $htaccess[] = "Require valid-user";
    $htaccess[] = "SetEnvIf Request_URI \"(.logout\.php)$\"  allow";
    $htaccess[] = "SetEnvIf Request_URI \"(join\.php)$\"  allow";
-   $htaccess[] = "SetEnvIf Request_URI \"(.style\.css)$\"  allow";
    $htaccess[] = "Order allow,deny";
    $htaccess[] = "Allow from env=allow";
    $htaccess[] = "Satisfy any";
