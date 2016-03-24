@@ -46,6 +46,7 @@ $pathHtaccess = getcwd() . "/.htaccess";
 $pathHtpasswd = getcwd() . "/.htpasswd";
 $pathConfigPhp = getcwd() . "/config.php";
 $pathQueue = getcwd() . "/.queue";
+$pathUserfile = getcwd() . "/users";
 $error = array();
 $phpErrorMsg = "";
 
@@ -387,8 +388,8 @@ if ($_POST["job"] == "removeUser" and $admin)
    $handle = fopen($pathUserfile, "w");
    foreach ($userlist as $key => $value)
      {
-      if (strlen($value) < 2) continue;
-      if (strncmp($value, $_POST["name"], strlen($_POST["name"])) != 0) fwrite ($handle, trim($value) . "\n");
+      if (strlen($value) < 2 or strncmp($value, $_POST["name"], strlen($_POST["name"])) == 0) continue;
+      fwrite ($handle, trim($value) . "\n");
      }
    fclose ($handle);
 

@@ -96,7 +96,7 @@ if (isset($_POST["job"]) and $_POST["job"] == "addUser")
       $error["userExists"] = true;
       $error["debug"] = debug_backtrace();
      }
-   if (strcmp($_POST["passwd"], $_POST["passwdConfirm"]) != 0)
+   if (strcmp($_POST["passwd"], $_POST["passwdConfirm"]) != 0 or strlen($_POST["passwd"]) < 5)
      {
       $phpErrorMsg .= "Error: Passwords don't match!\n";
       $error["passwordsNoMatch"] = true;
@@ -155,7 +155,6 @@ if ($_POST["job"] == "newPasswd")
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>share <?php echo $_SERVER["SERVER_NAME"]; ?></title>
-<link rel="stylesheet" href=".style.css" type="text/css">
 </head>
 <body>
   <div id="main" style="text-align: center;">
@@ -200,7 +199,6 @@ if (isset($_GET["verification"]))
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>share <?php echo $_SERVER["SERVER_NAME"]; ?></title>
-<link rel="stylesheet" href=".style.css" type="text/css">
 <script type="text/javascript">
 
 var usernames = [
@@ -211,13 +209,22 @@ function checkInput ()
   {
    var error = false;
    name = document.getElementById("name").value;
+   document.getElementById("error").innerHTML = "";
    for (var i = 0; i < usernames.length; i++)
      {
+      illChar = name.match(/[^A-Za-z0-9_.-]/g);
+      if (illChar != null)
+        {
+         error = true;
+         namestring = name.replace(/[^A-Za-z0-9_.-]/g, function markIllChar(x) { return '<b><i><span style="background-color: #FA6543;">' + x + '</span></i></b>'; });
+         document.getElementById("error").style.display = "block";
+         document.getElementById("error").innerHTML += "<?php echo gettext("This name contains illegal characters. Use only letters, numbers and . - _") . "<br>" . gettext("Illegal characters used:") . " "; ?>" + namestring + "<br>\n";
+        }
       if (usernames[i] == name)
         {
          error = true;
          document.getElementById("error").style.display = "block";
-         document.getElementById("error").innerHTML = "<?php echo gettext("This name is already used. Please choose another!"); ?>";
+         document.getElementById("error").innerHTML += "<?php echo gettext("This name is already used. Please choose another!"); ?><br>\n";
 	}
      }
    passwd = document.getElementById('passwd');
@@ -232,7 +239,17 @@ function checkInput ()
       confirmPasswd.style.backgroundColor = "red";
       confirmPasswd.value = "";
       document.getElementById("error").style.display = "block";
-      document.getElementById("error").innerHTML = "<?php echo gettext("The passwords don't match! Please try again!"); ?>";
+      document.getElementById("error").innerHTML += "<?php echo gettext("The passwords don't match! Please try again!"); ?><br>\n";
+     }
+   if (passwd.value.length < 5)
+     {
+      error = true;
+      passwd.style.backgroundColor = "red";
+      passwd.value = "";
+      confirmPasswd.style.backgroundColor = "red";
+      confirmPasswd.value = "";
+      document.getElementById("error").style.display = "block";
+      document.getElementById("error").innerHTML += "<?php echo gettext("The password is too short! Please try again (min 6 characters)!"); ?><br>\n";
      }
    if (error != true) document.getElementById("setPasswd").submit();
   }
@@ -247,12 +264,12 @@ function checkInput ()
       <input type="hidden" name="hash" value="<?php echo $hash; ?>">
       <div>
         <table border="0" style="margin: 0px auto;">
-          <tr><td><?php echo gettext("name:"); ?></td><td><input id="name" type="text" name="name" value=""></td></tr>
-          <tr><td><?php echo gettext("password:"); ?></td><td><input id="passwd" type="password" name="passwd" onfocus="document.getElementById('passwd').backgroundColor = 'white';"></td></tr>
+          <tr><td><?php echo gettext("name:") . "<br>(" . gettext("allowed characters are:") . " a-z A-Z 0-9 -_.)"; ?></td><td><input id="name" type="text" name="name" value=""></td></tr>
+          <tr><td><?php echo gettext("password:") . "<br>(" . gettext("min. 6 characters") . ")"; ?></td><td><input id="passwd" type="password" name="passwd" onfocus="document.getElementById('passwd').backgroundColor = 'white';"></td></tr>
           <tr><td><?php echo gettext("confirm password:"); ?></td><td><input id="confirmPasswd" type="password" name="passwdConfirm" onfocus="document.getElementById('confirmPasswd').backgroundColor = 'white';"></td></tr>
         </table>
       </div>
-      <button type="submit" onclick="checkInput();">OK</button>
+      <button type="button" onclick="checkInput();">OK</button>
       <div id="error" style="display: none; background-color: red;">
         <!-- Error messages will go here -->
       </div>
@@ -307,7 +324,6 @@ if (isset($_GET["job"]) and $_GET["job"] == "resetPasswd")
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>share <?php echo $_SERVER["SERVER_NAME"]; ?></title>
-<link rel="stylesheet" href=".style.css" type="text/css">
 <script type="text/javascript">
 
 function checkInput ()
