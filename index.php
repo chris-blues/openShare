@@ -367,7 +367,9 @@ if ($_POST["job"] == "inviteUser")
    $message = gettext("Hi!");
    $message .= "\n\n";
    $message .= sprintf(gettext("You have been invited by %s to join our webspace at %s - all you have to do is click on the following link. Make sure it's not broken in two (some email-clients do such nasty things!)\n"), $_SERVER["REMOTE_USER"], $_SERVER["SERVER_NAME"]);
-   $message .= sprintf(gettext("Then you will have to choose a username and password, and you're good to go.\n\n%s\n\n"), $link);
+   $message .= gettext("Then you will have to choose a username and password, and you're good to go.") . sprintf("\n\n%s\n\n", $link);
+   $message .= "\n\n" . gettext("You can put the following link into your bookmarks to reach the share:") . "\n";
+   $message .= "https://" . $_SERVER["SERVER_NAME"] . str_replace("index.php", "", $_SERVER["SCRIPT_NAME"]) . "\n\n\n";
    $message .= sprintf(gettext("If you should forget your password click on this link to reset it:\n\n%s\n\n\n"), $resetPasswd);
    $message .= sprintf(gettext("Keep this mail in a safe place, for you might need it some day!\n\n\nBest regards,\n\n%s\n\n\nPlease don't respond to this mail!"), $_SERVER["REMOTE_USER"]);
 
