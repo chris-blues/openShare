@@ -5,8 +5,8 @@ function writeLog ($calledFrom)
   {
    global $error, $phpErrorMsg;
    $handle = fopen(".log", "a");
-     fwrite ($handle, date("Y-m-d H:i:s") . " - {$_SERVER["REMOTE_USER"]} - call: $calledFrom - errors:");
-     foreach ($error as $key => $value) fwrite ($handle, " $key");
+     fwrite ($handle, date("Y-m-d H:i:s") . " - {$_SERVER["REMOTE_USER"]} - call: $calledFrom");
+     if (isset($error) and count($error) > 0) { fwrite ($handle, " - errors: "); foreach ($error as $key => $value) fwrite ($handle, " $key"); }
      fwrite ($handle, " - \$_POST:");
      foreach ($_POST as $key => $value)
        { // disguise passwords!
@@ -23,6 +23,17 @@ function writeLog ($calledFrom)
    fwrite($handle, "\n");
    if (strlen($phpErrorMsg) > 2) { fwrite ($handle, "$phpErrorMsg\n"); }
    fclose ($handle);
+  }
+
+function evaluateBool ($var)
+  {
+   switch ($var)
+     {
+      case true:  $res = "TRUE"; break;
+      case false: $res = "FALSE"; break;
+      default: 	  $res = $var;
+     }
+   return $res;
   }
 
 function populateHtaccess ($pathHtpasswd)
@@ -63,6 +74,7 @@ function readDirStructure($path = "")
 
    foreach ($folderContent as $key => $value) 
      {
+      $value = trim($value);
       $perms = getFilePerms("$thisFolder/$value");
       if ($perms != "0755") { chmod ("$thisFolder/$value", 0755); }
 
@@ -266,6 +278,21 @@ function writeHtpasswd ($fullFileName, $htpasswd)
    global $phpErrorMsg;
    if (!$handle = fopen($fullFileName, "w"))
      { $phpErrorMsg .= "Error! Could not open $fullFileName\n"; $error["openHtpasswd"] = true; $error["debug"] = debug_backtrace(); }
+
+   foreach ($htpasswd as $key => $value)
+     {
+      $tmp = explode(":", $value);
+      $pwChk[] = $tmp[0];
+     }
+   foreach ($pwChk as $key => $value)
+     {
+      $match = array_search($value, $pwChk);
+      if ($match !== false and $match != $key and $match <= $key)
+        {
+         if ($debug) { echo "Multiple entries for $value found. Removing first occurence.<br>\n"; }
+         unset($htpasswd[$key]);
+	}
+     }
    foreach ($htpasswd as $line => $data)
      {
       if ($line > 0) fwrite($handle, "\n$data");
@@ -316,18 +343,19 @@ function changeAdmin ($fullFileName, $name, $job)
 
 function checkQueue ($email, $hash, $path)
   {
+   $emailVerified = false;
    $queue = file($path);
    foreach ($queue as $key => $value)
      {
+      $value = trim($value);
       if (strncmp($value, $email, strlen($email)) == 0)
         {
          //unset ($queue[$key]);
-         $tmp = explode (" ", $value);
-         if (strcmp($tmp[1], $hash) == 0) { $emailVerified = true; }
+         $tmp = explode (" ", trim($value));
+         if (strcmp($tmp[1], $hash) == 0) { $emailVerified = true; echo "hash matches...<br>\n"; }
         }
      }
-   if (!isset($emailVerified)) return false;
-   else return $emailVerified;
+   return $emailVerified;
   }
 
 function cleanUpQueue ($email, $path)
@@ -335,6 +363,7 @@ function cleanUpQueue ($email, $path)
    $queue = file($path);
    foreach ($queue as $key => $value)
      {
+      $value = trim($value);
       if (strncmp($value, $email, strlen($email)) == 0)
         {
          unset($queue[$key]);

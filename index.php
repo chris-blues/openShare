@@ -105,62 +105,10 @@ if ($noPasswd and !isset($_POST["passwd"])) // diplay simple html page to enter 
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href=".style.css" type="text/css">
-<script type="text/javascript">
-
-var usernames = [
-<?php if (isset($user) and count($user) > 0) { foreach ($user as $key => $value) { if($key == 0) echo "\"$value\""; else echo ",\n\"$value\""; } } ?>
-];
-
-function checkInput ()
-  {
-   var error = false;
-   name = document.getElementById("name").value;
-   for (var i = 0; i < usernames.length; i++)
-     {
-      if (usernames[i] == name)
-        {
-         error = true;
-         document.getElementById("error").style.display = "block";
-         document.getElementById("error").innHTML = "<?php echo gettext("This name is already used. Please choose another!"); ?>";
-        }
-     }
-   passwd = document.getElementById('passwd');
-   confirmPasswd = document.getElementById('confirmPasswd');
-   if (passwd.value == confirmPasswd.value && passwd.value != "" && document.getElementById('name').value != "")
-     {  }
-   else 
-     {
-      error = true;
-      passwd.style.backgroundColor = "red";
-      passwd.value = "";
-      confirmPasswd.style.backgroundColor = "red";
-      confirmPasswd.value = "";
-      document.getElementById("error").style.display = "block";
-      document.getElementById("error").innHTML = "<?php echo gettext("The passwords don't match! Please try again!"); ?>";
-     }
-   if (error != true) document.getElementById("setPasswd").submit();
-  }
-</script>
+<meta http-equiv="refresh" content="0; URL=join.php?job=newHtpasswd">
 </head>
 <body>
-  <div id="main" style="text-align: center;">
-    <h1>Enter first User's data</h1>
-    <form id="setPasswd" action="index.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-      <input type="hidden" name="job" value="<?php if (isset($_GET["job"]) and $_GET["job"] == "joinUser") echo "addUser"; else echo "init"; ?>">
-      <div>
-        <table border="0" style="margin: 0px auto;">
-          <tr><td><?php echo gettext("name:"); ?></td><td><input id="name" type="text" name="name" value=""></td></tr>
-          <tr><td><?php echo gettext("password:"); ?></td><td><input id="passwd" type="password" name="passwd" onfocus="document.getElementById('passwd').backgroundColor = 'white';"></td></tr>
-          <tr><td><?php echo gettext("confirm password:"); ?></td><td><input id="confirmPasswd" type="password" name="passwdConfirm" onfocus="document.getElementById('confirmPasswd').backgroundColor = 'white';"></td></tr>
-        </table>
-      </div>
-      <button type="button" onclick="checkInput();">OK</button>
-      <div id="error" style="display: none; background-color: red;">
-        <!-- Error messages will go here -->
-      </div>
-    </form>
-  </div>
+  redirecting to <a href="join.php?job=newHtpasswd">join.php</a> to input user data
 </body>
 </html>
    <?php 

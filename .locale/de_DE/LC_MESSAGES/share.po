@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: webspaceManager\n"
-"POT-Creation-Date: 2016-03-24 14:26+0100\n"
-"PO-Revision-Date: 2016-03-24 14:26+0100\n"
+"POT-Creation-Date: 2016-03-24 14:55+0100\n"
+"PO-Revision-Date: 2016-03-24 14:55+0100\n"
 "Last-Translator: chris_blues <chris@musicchris.de>\n"
 "Language-Team: chris@musicchris.de <chris@musicchris.de>\n"
 "Language: de\n"
@@ -31,36 +31,16 @@ msgstr "OK!\n"
 msgid "Going in!"
 msgstr "Los gehts!"
 
-#: index.php:125 join.php:227
-msgid "This name is already used. Please choose another!"
-msgstr "Dieser Name wird schon benutzt. Bitte suchen Sie sich einen anderen!"
-
-#: index.php:140 join.php:242 join.php:344
-msgid "The passwords don't match! Please try again!"
-msgstr "Die Passwörter stimmen nicht überein! Bitte noch einmal versuchen!"
-
-#: index.php:153 join.php:267
-msgid "name:"
-msgstr "Name:"
-
-#: index.php:154 join.php:268
-msgid "password:"
-msgstr "Passwort:"
-
-#: index.php:155 index.php:743 join.php:269 join.php:359
-msgid "confirm password:"
-msgstr "Passwort bestätigen:"
-
-#: index.php:409
+#: index.php:357
 #, php-format
 msgid "Invitation to join our webspace at %s"
 msgstr "Einladung, unseren Webspace auf %s mit zu benutzen"
 
-#: index.php:419
+#: index.php:367
 msgid "Hi!"
 msgstr "Hallo!"
 
-#: index.php:421
+#: index.php:369
 #, php-format
 msgid ""
 "You have been invited by %s to join our webspace at %s - all you have to do "
@@ -71,7 +51,7 @@ msgstr ""
 "brauchen nur auf den folgenden Link zu klicken. Stellen Sie bitte sicher, "
 "daß er nicht zerteilt wurde (Manche Emailprogramme machen gemeine Sachen!)\n"
 
-#: index.php:422
+#: index.php:370
 #, php-format
 msgid ""
 "Then you will have to choose a username and password, and you're good to "
@@ -86,7 +66,7 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: index.php:423
+#: index.php:371
 #, php-format
 msgid ""
 "If you should forget your password click on this link to reset it:\n"
@@ -102,7 +82,7 @@ msgstr ""
 "\n"
 "\n"
 
-#: index.php:424
+#: index.php:372
 #, php-format
 msgid ""
 "Keep this mail in a safe place, for you might need it some day!\n"
@@ -126,19 +106,19 @@ msgstr ""
 "\n"
 "Bitte antworten Sie nicht auf diese Email!"
 
-#: index.php:621
+#: index.php:569
 msgid "remaining"
 msgstr "verbleibend"
 
-#: index.php:626
+#: index.php:574
 msgid "unable to compute"
 msgstr "nicht berechenbar"
 
-#: index.php:640
+#: index.php:588
 msgid "There was an error attempting to upload the file."
 msgstr "Es gab einen Fehler beim Hochladen der Datei."
 
-#: index.php:645
+#: index.php:593
 msgid ""
 "The upload has been canceled by the user or the browser dropped the "
 "connection."
@@ -146,123 +126,127 @@ msgstr ""
 "Das Hochladen wurde vom Benutzer unterbrochen, oder der Browser hat die "
 "Verbindung verloren."
 
-#: index.php:665
+#: index.php:613
 msgid "Do you really want to delete this???"
 msgstr "Wollen Sie das wirklich löschen???"
 
-#: index.php:737 index.php:745
+#: index.php:685 index.php:693
 msgid "change password"
 msgstr "Passwort ändern"
 
-#: index.php:741 join.php:358
+#: index.php:689 join.php:448
 msgid "new password:"
 msgstr "neues Passwort:"
 
-#: index.php:752
+#: index.php:691 join.php:165 join.php:359 join.php:449
+msgid "confirm password:"
+msgstr "Passwort bestätigen:"
+
+#: index.php:700
 msgid "admin options"
 msgstr "Admin Optionen"
 
-#: index.php:755 index.php:760
+#: index.php:703 index.php:708
 msgid "invite user"
 msgstr "Benutzer einladen"
 
-#: index.php:759
+#: index.php:707 join.php:163
 msgid "email:"
 msgstr "Email:"
 
-#: index.php:765 index.php:779
+#: index.php:713 index.php:727
 msgid "remove user"
 msgstr "Benutzer entfernen"
 
-#: index.php:784
+#: index.php:732
 msgid "manage admins"
 msgstr "Admins verwalten"
 
-#: index.php:798
+#: index.php:746
 msgid "make admin"
 msgstr "Admin"
 
-#: index.php:799
+#: index.php:747
 msgid "make user"
 msgstr "User"
 
-#: index.php:807
+#: index.php:755
 msgid "view log"
 msgstr "Log ansehen"
 
-#: index.php:818
+#: index.php:766
 msgid "log out"
 msgstr "Abmelden"
 
-#: index.php:827 index.php:910
+#: index.php:775 index.php:858
 msgid "file commands"
 msgstr "Dateibefehle"
 
-#: index.php:832
+#: index.php:780
 msgid "Enter new file name:"
 msgstr "Neuen Dateinamen angeben:"
 
-#: index.php:835
+#: index.php:783
 msgid "rename File"
 msgstr "Datei umbenennen"
 
-#: index.php:840
+#: index.php:788
 msgid "Upload file:"
 msgstr "Datei hochladen: "
 
-#: index.php:840 index.php:898
+#: index.php:788 index.php:846
 msgid "max 90 MiB!"
 msgstr "max 90 MiB!"
 
-#: index.php:855
+#: index.php:803
 msgid "Create dir:"
 msgstr "Verzeichnis erstellen:"
 
-#: index.php:890
+#: index.php:838
 msgid "Move to:"
 msgstr "Ausgewählte verschieben"
 
-#: index.php:894
+#: index.php:842
 msgid "Move selected files"
 msgstr "Ausgewählte Dateien verschieben"
 
-#: index.php:897
+#: index.php:845
 msgid "Download selected files as zip archive."
 msgstr "Ausgewählte Dateien als zip Archiv herunterladen."
 
-#: index.php:898
+#: index.php:846
 msgid "Download selected as zip"
 msgstr "Ausgewählte als zip herunterladen"
 
-#: index.php:901
+#: index.php:849
 msgid "Careful!!! Can NOT be restored!"
 msgstr "Achtung!!! Kann NICHT rückgängig gemacht werden!"
 
-#: index.php:902
+#: index.php:850
 msgid "Delete selected files"
 msgstr "Ausgewählte Dateien löschen"
 
-#: index.php:910
+#: index.php:858
 msgid "status"
 msgstr "Zustand"
 
-#: index.php:910
+#: index.php:858
 msgid "filename (download)"
 msgstr "Dateiname (download)"
 
-#: index.php:910
+#: index.php:858
 msgid "size"
 msgstr "Größe"
 
-#: index.php:910
+#: index.php:858
 msgid "date"
 msgstr "Zeit"
 
-#: index.php:922
+#: index.php:870
 msgid "mark all files"
 msgstr "Alle Dateien markieren"
 
-#: index.php:945
+#: index.php:893
 msgid ""
 "dir\n"
 "Access: "
@@ -270,43 +254,87 @@ msgstr ""
 "Verzeichnis\n"
 "Zugriff: "
 
-#: index.php:948 index.php:979
+#: index.php:896 index.php:927
 msgid "rename"
 msgstr "umbenennen"
 
-#: index.php:967
+#: index.php:915
 msgid "size:"
 msgstr "Größe:"
 
-#: index.php:970
+#: index.php:918
 msgid "Access: "
 msgstr "Zugriff: "
 
-#: index.php:974
+#: index.php:922
 msgid "file - completely transferred"
 msgstr "Datei - vollständig übertragen"
 
-#: index.php:978
+#: index.php:926
 msgid "open file"
 msgstr "öffne Datei"
 
-#: index.php:981
+#: index.php:929
 msgid "download"
 msgstr "Download"
 
-#: index.php:986
+#: index.php:934
 msgid "file in transfer..."
 msgstr "Datei wird übertragen..."
 
-#: index.php:1033
+#: index.php:981
 msgid "files"
 msgstr "Dateien"
 
-#: index.php:1033
+#: index.php:981
 msgid "processing needed"
 msgstr "Verarbeitung brauchte"
 
-#: join.php:132
+#: join.php:117 join.php:311
+msgid ""
+"This name contains illegal characters. Use only letters, numbers and . - _"
+msgstr ""
+"Dieser Name enthält ungültige Zeichen. Nur Buchstaben, Zahlen und . - _ sind "
+"erlaubt!"
+
+#: join.php:117 join.php:311
+msgid "Illegal characters used:"
+msgstr "ungültige Zeichen:"
+
+#: join.php:123 join.php:317
+msgid "This name is already used. Please choose another!"
+msgstr "Dieser Name wird schon benutzt. Bitte suchen Sie sich einen anderen!"
+
+#: join.php:138 join.php:332 join.php:434
+msgid "The passwords don't match! Please try again!"
+msgstr "Die Passwörter stimmen nicht überein! Bitte noch einmal versuchen!"
+
+#: join.php:148 join.php:342
+msgid "The password is too short! Please try again (min 6 characters)!"
+msgstr ""
+"Das Passwort ist zu kurz! Bitte noch einmal versuchen (mind. 6 Zeichen)!"
+
+#: join.php:156 join.php:350 join.php:442
+msgid "Enter your data"
+msgstr "Geben Sie Ihre Daten an"
+
+#: join.php:162 join.php:357
+msgid "name:"
+msgstr "Name:"
+
+#: join.php:162 join.php:357
+msgid "allowed characters are:"
+msgstr "erlaubte Zeichen:"
+
+#: join.php:164 join.php:358
+msgid "password:"
+msgstr "Passwort:"
+
+#: join.php:164 join.php:358
+msgid "min. 6 characters"
+msgstr "mind. 6 Zeichen"
+
+#: join.php:222
 msgid ""
 "Your name was not found!<br>\n"
 "Unauthorized access!<br>\n"
@@ -318,7 +346,7 @@ msgstr ""
 "<br>\n"
 "Beende...<br>\n"
 
-#: join.php:161
+#: join.php:251
 msgid ""
 "<h1>There was some error!</h1>\n"
 "\n"
@@ -341,35 +369,7 @@ msgstr ""
 "Admin, um prüfen zu lassen, ob der Hash intakt und noch in der user Datei "
 "ist.</p>\n"
 
-#: join.php:221
-msgid ""
-"This name contains illegal characters. Use only letters, numbers and . - _"
-msgstr ""
-"Dieser Name enthält ungültige Zeichen. Nur Buchstaben, Zahlen und . - _ sind "
-"erlaubt!"
-
-#: join.php:221
-msgid "Illegal characters used:"
-msgstr "ungültige Zeichen:"
-
-#: join.php:252
-msgid "The password is too short! Please try again (min 6 characters)!"
-msgstr ""
-"Das Passwort ist zu kurz! Bitte noch einmal versuchen (mind. 6 Zeichen)!"
-
-#: join.php:260 join.php:352
-msgid "Enter your data"
-msgstr "Geben Sie Ihre Daten an"
-
-#: join.php:267
-msgid "allowed characters are:"
-msgstr "erlaubte Zeichen:"
-
-#: join.php:268
-msgid "min. 6 characters"
-msgstr "mind. 6 Zeichen"
-
-#: join.php:386
+#: join.php:476
 msgid ""
 "<h1>Sorry, you're not allowed to enter!</h1>\n"
 "\n"
