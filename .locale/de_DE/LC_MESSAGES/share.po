@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: webspaceManager\n"
-"POT-Creation-Date: 2016-03-24 17:53+0100\n"
-"PO-Revision-Date: 2016-03-24 17:53+0100\n"
+"POT-Creation-Date: 2016-04-15 20:42+0200\n"
+"PO-Revision-Date: 2016-04-15 20:42+0200\n"
 "Last-Translator: chris_blues <chris@musicchris.de>\n"
 "Language-Team: chris@musicchris.de <chris@musicchris.de>\n"
 "Language: de\n"
@@ -18,6 +18,7 @@ msgstr ""
 "X-Poedit-SearchPath-2: functions.php\n"
 "X-Poedit-SearchPath-3: index.php\n"
 "X-Poedit-SearchPath-4: join.php\n"
+"X-Poedit-SearchPath-5: view.php\n"
 
 #: .uploadfile.php:26
 msgid "Error!\n"
@@ -169,82 +170,94 @@ msgid "make user"
 msgstr "User"
 
 #: index.php:757
+msgid "view config"
+msgstr "Config ansehen"
+
+#: index.php:763
 msgid "view log"
 msgstr "Log ansehen"
 
-#: index.php:768
+#: index.php:769
+msgid "view queue"
+msgstr "Warteschlange ansehen"
+
+#: index.php:775
+msgid "view users"
+msgstr "Benutzer ansehen"
+
+#: index.php:788
 msgid "log out"
 msgstr "Abmelden"
 
-#: index.php:777 index.php:860
+#: index.php:797 index.php:880
 msgid "file commands"
 msgstr "Dateibefehle"
 
-#: index.php:782
+#: index.php:802
 msgid "Enter new file name:"
 msgstr "Neuen Dateinamen angeben:"
 
-#: index.php:785
+#: index.php:805
 msgid "rename File"
 msgstr "Datei umbenennen"
 
-#: index.php:790
+#: index.php:810
 msgid "Upload file:"
 msgstr "Datei hochladen: "
 
-#: index.php:790 index.php:848
+#: index.php:810 index.php:868
 msgid "max 90 MiB!"
 msgstr "max 90 MiB!"
 
-#: index.php:805
+#: index.php:825
 msgid "Create dir:"
 msgstr "Verzeichnis erstellen:"
 
-#: index.php:840
+#: index.php:860
 msgid "Move to:"
 msgstr "Ausgewählte verschieben"
 
-#: index.php:844
+#: index.php:864
 msgid "Move selected files"
 msgstr "Ausgewählte Dateien verschieben"
 
-#: index.php:847
+#: index.php:867
 msgid "Download selected files as zip archive."
 msgstr "Ausgewählte Dateien als zip Archiv herunterladen."
 
-#: index.php:848
+#: index.php:868
 msgid "Download selected as zip"
 msgstr "Ausgewählte als zip herunterladen"
 
-#: index.php:851
+#: index.php:871
 msgid "Careful!!! Can NOT be restored!"
 msgstr "Achtung!!! Kann NICHT rückgängig gemacht werden!"
 
-#: index.php:852
+#: index.php:872
 msgid "Delete selected files"
 msgstr "Ausgewählte Dateien löschen"
 
-#: index.php:860
+#: index.php:880
 msgid "status"
 msgstr "Zustand"
 
-#: index.php:860
+#: index.php:880
 msgid "filename (download)"
 msgstr "Dateiname (download)"
 
-#: index.php:860
+#: index.php:880
 msgid "size"
 msgstr "Größe"
 
-#: index.php:860
+#: index.php:880
 msgid "date"
 msgstr "Zeit"
 
-#: index.php:872
+#: index.php:892
 msgid "mark all files"
 msgstr "Alle Dateien markieren"
 
-#: index.php:895
+#: index.php:915
 msgid ""
 "dir\n"
 "Access: "
@@ -252,39 +265,39 @@ msgstr ""
 "Verzeichnis\n"
 "Zugriff: "
 
-#: index.php:898 index.php:929
+#: index.php:918 index.php:949
 msgid "rename"
 msgstr "umbenennen"
 
-#: index.php:917
+#: index.php:937
 msgid "size:"
 msgstr "Größe:"
 
-#: index.php:920
+#: index.php:940
 msgid "Access: "
 msgstr "Zugriff: "
 
-#: index.php:924
+#: index.php:944
 msgid "file - completely transferred"
 msgstr "Datei - vollständig übertragen"
 
-#: index.php:928
+#: index.php:948
 msgid "open file"
 msgstr "öffne Datei"
 
-#: index.php:931
+#: index.php:951
 msgid "download"
 msgstr "Download"
 
-#: index.php:936
+#: index.php:956
 msgid "file in transfer..."
 msgstr "Datei wird übertragen..."
 
-#: index.php:983
+#: index.php:1003
 msgid "files"
 msgstr "Dateien"
 
-#: index.php:983
+#: index.php:1003
 msgid "processing needed"
 msgstr "Verarbeitung brauchte"
 
@@ -385,6 +398,14 @@ msgstr ""
 "\n"
 "    <p>Fragen Sie den Admin oder Einladenden, Sie wieder einzutragen, wenn "
 "Sie denken, daß Sie hier rein gehören.</p>\n"
+
+#: view.php:54
+msgid "Save file"
+msgstr "Datei speichern"
+
+#: view.php:56
+msgid "Close file"
+msgstr "schließen"
 
 #~ msgid "You have been invited by "
 #~ msgstr "Du wurdest von "

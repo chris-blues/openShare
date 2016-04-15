@@ -754,12 +754,32 @@ foreach ($user as $key => $name)
             </div>
           </li>
           <li>
+            <div onclick="document.getElementById('viewConfig').submit();"><a><?php echo gettext("view config"); ?></a></div>
+            <form id="viewConfig" action="view.php" target="_blank" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+              <input type="hidden" name="file" value="config.php">
+            </form>
+          </li>
+          <li>
             <div onclick="document.getElementById('viewLog').submit();"><a><?php echo gettext("view log"); ?></a></div>
-            <form id="viewLog" action=".log" target="_blank" method="post" accept-charset="UTF-8" enctype="multipart/form-data"></form>
+            <form id="viewLog" action="view.php" target="_blank" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+              <input type="hidden" name="file" value=".log">
+            </form>
+          </li>
+          <li>
+            <div onclick="document.getElementById('viewQueue').submit();"><a><?php echo gettext("view queue"); ?></a></div>
+            <form id="viewQueue" action="view.php" target="_blank" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+              <input type="hidden" name="file" value=".queue">
+            </form>
+          </li>
+          <li>
+            <div onclick="document.getElementById('viewUsers').submit();"><a><?php echo gettext("view users"); ?></a></div>
+            <form id="viewUsers" action="view.php" target="_blank" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+              <input type="hidden" name="file" value="users">
+            </form>
           </li>
 	</ul>
 	<hr>
-	<ul class="userSettings"><?php } ?>
+	<ul class="userSettings"><?php } // End Admin settings ?>
           <li>
             <div onclick="document.getElementById('logout').submit();">
             <form id="logout" action="https://guest@<?php echo $_SERVER["SERVER_NAME"] . str_replace("index.php", "", $_SERVER["SCRIPT_NAME"]); ?>.logout.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
