@@ -4,6 +4,8 @@ $start = microtime(true);
 $debug = false;
 //$debug = true;
 
+$version = "v0.1";
+
 //error_reporting(E_ALL);
 error_reporting(E_ALL & ~E_NOTICE);
 ini_set("log_errors", 1);
@@ -1000,7 +1002,9 @@ switch ($unit)
      break;
   }
 
-printf("      %.2f %s in %d %s - %s - %s %.3f %s", $totalFileSize, $totalUnit, $c, gettext("files"), date("d.F Y H:i:s", $time), gettext("processing needed"), $proctime, $unit);
+$openShare = "<a href=\"https://github.com/chris-blues/openShare\" target=\"_blank\">openShare $version</a>";
+
+printf("      %.2f %s in %d %s - %s - %s %.3f %s - %s", $totalFileSize, $totalUnit, $c, gettext("files"), date("d.F Y H:i:s", $time), gettext("processing needed"), $proctime, $unit, $openShare);
 ?>
     </b>
   </div>
