@@ -698,11 +698,6 @@ if (!strlen($phpErrorMsg) > 1 and $_POST["job"] != "downloadZip") echo "<body>\n
               </form>
             </div>
           </li>
-<?php if ($admin) { ?>
-	</ul>
-	<hr>
-	<p style="text-align: center; font-size: 0.8em; margin: 0px;"><?php echo gettext("admin options"); ?></p>
-	<ul class="userSettings" style="margin-top: 0px; padding: 0px 20px 5px;">
           <li>
             <div onclick="toggleBox('addUserBox');"><a><?php echo gettext("invite user"); ?></a></div>
             <div id="addUserBox" class="userMenuBox">
@@ -713,6 +708,11 @@ if (!strlen($phpErrorMsg) > 1 and $_POST["job"] != "downloadZip") echo "<body>\n
               </form>
             </div>
           </li>
+<?php if ($admin) { ?>
+	</ul>
+	<hr>
+	<p style="text-align: center; font-size: 0.8em; margin: 0px;"><?php echo gettext("admin options"); ?></p>
+	<ul class="userSettings" style="margin-top: 0px; padding: 0px 20px 5px;">
           <li>
             <div onclick="toggleBox('removeUserBox');"><a><?php echo gettext("remove user"); ?></a></div>
             <div id="removeUserBox" class="userMenuBox">
