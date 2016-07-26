@@ -7,7 +7,7 @@ function writeLog ($calledFrom)
    $handle = fopen(".log", "a");
      fwrite ($handle, date("Y-m-d H:i:s") . " - {$_SERVER["REMOTE_USER"]} - call: $calledFrom");
      if (isset($error) and count($error) > 0) { fwrite ($handle, " - errors: "); foreach ($error as $key => $value) fwrite ($handle, " $key"); }
-     fwrite ($handle, " - \$_POST:");
+     fwrite ($handle, " - " . $_SERVER["REQUEST_URI"]);
      foreach ($_POST as $key => $value)
        { // disguise passwords!
         if (stripos($key, "passwd") !== false)
@@ -18,7 +18,7 @@ function writeLog ($calledFrom)
              { $value .= "*"; }
 	   $value .= " ($pl)";
 	  }
-        fwrite ($handle, " $key=>$value");
+        fwrite ($handle, "\n\$_POST[$key] : $value");
        }
    fwrite($handle, "\n");
    if (strlen($phpErrorMsg) > 2) { fwrite ($handle, "$phpErrorMsg\n"); }

@@ -7,14 +7,9 @@ $debug = false;
 error_reporting(E_ALL & ~E_NOTICE);
 ini_set("log_errors", 1);
 ini_set("error_log", getcwd() . "/.php-error.log");
-if ($debug)
-  {
-   ini_set("display_errors", 1);
-  }
-else
-  {
-   ini_set("display_errors", 0);
-  }
+
+if ($debug) { ini_set("display_errors", 1); }
+else { ini_set("display_errors", 0); }
 
 $browserlang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 switch($browserlang)
