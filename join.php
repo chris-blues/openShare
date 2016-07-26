@@ -486,5 +486,6 @@ if (!isset($_GET["verification"]) and !isset($_GET["job"]) and !isset($_POST["jo
 </body>
 </html>
 <?php }
-  writeLog("join.php: main (355: unauthorizedAccess/brokenLink)");
+  writeLog("join.php: main (355: unauthorizedAccess/brokenLink) - " . $_SERVER["HTTP_USER_AGENT"] . "\n");
+  //echo "<pre>"; print_r($_SERVER); echo "</pre>\n";
 ?>
