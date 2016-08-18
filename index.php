@@ -941,9 +941,14 @@ foreach ($dir as $key => $filename)
    else $tooltip .= number_format($filesize, 2, ".", "");
    $tooltip .= " $unit\n" . gettext("Access: ") . getFilePerms("$cwd/$path$filename");
 
+   $finfo = finfo_open(FILEINFO_MIME_TYPE);
+     if (!$finfo) echo "Öffnen der fileinfo-Datenbank fehlgeschlagen";
+     $mimetype = finfo_file($finfo, "$cwd/$path$filename");
+   finfo_close($finfo);
+
    if ($time > $filetime + 3) // Wait 3 secs more, to allow for cache-bursts and such...
      {
-      $status = gettext("file - completely transferred");
+      $status = gettext("file - completely transferred") . "\n$mimetype ";
 
       $completed = "<img src=\".icons/file.png\" alt=\"folder\" class=\"icon\" title=\"{$status}$tooltip\">";
       $filename_encoded = rawurlencode($filename);
@@ -955,7 +960,7 @@ foreach ($dir as $key => $filename)
      }
    else
      {
-      $status = gettext("file in transfer...");
+      $status = gettext("file in transfer...") . "\n$mimetype ";
       $completed = "<span title=\"{$status}$tooltip\">&#8646;</span>";
       $string = "$completed </td><td> $filename";
       $rename = "";
