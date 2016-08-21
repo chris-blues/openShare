@@ -4,7 +4,7 @@ $start = microtime(true);
 $debug = false;
 //$debug = true;
 
-$version = "v0.1";
+$version = "v0.2";
 
 //error_reporting(E_ALL);
 error_reporting(E_ALL & ~E_NOTICE);
@@ -452,6 +452,27 @@ $FolderStructure = readDirStructure();
 <title>share <?php echo $_SERVER["SERVER_NAME"]; ?></title>
 <link rel="stylesheet" href=".style.css" type="text/css">
 <?php if ($_POST["job"] == "logout") { ?></head><body><h1 style="text-align: center; vertical-align: middle;">log out</h1></body></html><?php exit; } ?>
+<script type="text/javascript" src="js/jquery.fancybox-1.3.4/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.easing-1.3.pack.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script>
+$(document).ready(function() {
+    $("a.fancy").fancybox({
+        'transitionIn'   :   'elastic',
+        'transitionOut'  :   'elastic',
+        'speedIn'        :   600,
+        'speedOut'       :   400,
+        'overlayShow'    :   true,
+        'overlayOpacity' :    0.9,
+        'overlayColor'   :   '#171410',
+        'titlePosition'  :   'inside',
+        'hideOnContentClick' : true,
+        'cyclic' : 'true'
+    });
+});
+</script>
 <script type="text/javascript">
 
 function getUnit(index)
@@ -946,13 +967,22 @@ foreach ($dir as $key => $filename)
      $mimetype = finfo_file($finfo, "$cwd/$path$filename");
    finfo_close($finfo);
 
+   unset($link);
+   $filename_encoded = rawurlencode($filename);
+
+   if (strncmp($mimetype, "image", 5) == 0)
+         $link = "<a href=\"{$path}$filename_encoded\" class=\"fancy\" rel=\"gallery\">$filename</a>";
+   if (strncmp($mimetype, "audio", 5) == 0 or strncmp($mimetype, "video", 5) == 0)
+         $link = "<a href=\"mediaplayer.php?dir=../share/$path\" target=\"_blank\">$filename</a>";
+
+   if ($link == "") $link = "<a href=\"{$path}$filename_encoded\" target=\"_blank\">$filename</a>";
+
    if ($time > $filetime + 3) // Wait 3 secs more, to allow for cache-bursts and such...
      {
       $status = gettext("file - completely transferred") . "\n$mimetype ";
 
       $completed = "<img src=\".icons/file.png\" alt=\"folder\" class=\"icon\" title=\"{$status}$tooltip\">";
-      $filename_encoded = rawurlencode($filename);
-      $string = "$completed</td><td title=\"" . gettext("open file") . "\"> <a href=\"{$path}$filename_encoded\" target=\"_blank\">$filename</a>";
+      $string = "$completed</td><td title=\"" . gettext("open file") . "\"> $link";
       $rename = "<div id=\"$c\" data-filename=\"$filename\" style=\"display: none;\"></div><a href=\"javascript:renameFile($c);\">" . gettext("rename") . "</a>";
       $move = "<input type=\"checkbox\" name=\"filename[]\" value=\"$filename\" class=\"checkboxFile\">";
       $downloadFile = "<a href=\"$path$filename_encoded\" download>" . gettext("download") . "</a>";
