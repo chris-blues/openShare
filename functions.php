@@ -44,6 +44,12 @@ function populateHtaccess ($pathHtpasswd)
    $htaccess[] = "  RewriteCond %{HTTPS} off";
    $htaccess[] = "  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]";
    $htaccess[] = "</ifmodule>";
+   $htaccess[] = "<IfModule mod_expires.c>";
+   $htaccess[] = "  ExpiresActive off";
+   $htaccess[] = "  ExpiresDefault \"access plus 1 seconds\"";
+   $htaccess[] = "  ExpiresByType text/css \"access plus 1 months\"";
+   $htaccess[] = "  ExpiresByType font/* \"access plus 1 years\"";
+   $htaccess[] = "</IfModule>";
    $htaccess[] = "AuthName \"Login\"";
    $htaccess[] = "AuthType Basic";
    $htaccess[] = "AuthUserFile $pathHtpasswd";
