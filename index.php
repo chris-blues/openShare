@@ -970,10 +970,21 @@ foreach ($dir as $key => $filename)
    unset($link);
    $filename_encoded = rawurlencode($filename);
 
-   if (strncmp($mimetype, "image", 5) == 0)
-         $link = "<a href=\"{$path}$filename_encoded\" class=\"fancy\" rel=\"gallery\">$filename</a>";
-   if (strncmp($mimetype, "audio", 5) == 0 or strncmp($mimetype, "video", 5) == 0)
-         $link = "<a href=\"mediaplayer.php?dir=../share/$path\" target=\"_blank\">$filename</a>";
+   $filetype = explode("/", $mimetype);
+   if ($filetype[0] == "image")
+     {
+      $link = "<a href=\"{$path}$filename_encoded\" class=\"fancy\" rel=\"gallery\">$filename</a>";
+     }
+   if ($filetype[0] == "audio")
+     {
+      if ($filetype[1] == "mpeg" or $filetype[1] == "ogg" or $filetype[1] == "oga")
+        { $link = "<a href=\"mediaplayer.php?dir=../share/$path\" target=\"_blank\">$filename</a>"; }
+     }
+   if ($filetype[0] == "video")
+     {
+      if ($filetype[1] == "mpeg" or $filetype[1] == "mp4" or $filetype[1] == "webm" or $filetype[1] == "ogg" or $filetype[1] == "ogv")
+        { $link = "<a href=\"mediaplayer.php?dir=../share/$path\" target=\"_blank\">$filename</a>"; }
+     }
 
    if ($link == "") $link = "<a href=\"{$path}$filename_encoded\" target=\"_blank\">$filename</a>";
 
