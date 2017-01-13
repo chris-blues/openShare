@@ -452,12 +452,12 @@ $FolderStructure = readDirStructure();
 <title>share <?php echo $_SERVER["SERVER_NAME"]; ?></title>
 <link rel="stylesheet" href=".style.css" type="text/css">
 <?php if ($_POST["job"] == "logout") { ?></head><body><h1 style="text-align: center; vertical-align: middle;">log out</h1></body></html><?php exit; } ?>
-<script type="text/javascript" src="js/jquery.fancybox-1.3.4/jquery-1.4.3.min.js"></script>
-<script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.easing-1.3.pack.js"></script>
-<script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-<script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src=".js/jquery.fancybox-1.3.4/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src=".js/jquery.fancybox-1.3.4/fancybox/jquery.easing-1.3.pack.js"></script>
+<script type="text/javascript" src=".js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src=".js/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
-<script type="text/javascript" src="js/openShare.js"></script>
+<script type="text/javascript" src=".js/openShare.js"></script>
 </head>
 <?php 
 if (strlen($phpErrorMsg) > 1) echo "<body onload=\"displayErrorMessages();\">\n";
