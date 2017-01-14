@@ -21,7 +21,7 @@ a:hover { color: #666633; text-decoration: none; }
 }
 
 * {
-  font: normal 0.99em OpenSans;
+  font: normal 1.02em OpenSans;
 }
 
 img {
@@ -51,23 +51,23 @@ h5 {
 }
 
 b {
-  font: normal 1.0em OpenSans-Bold;
+  font: normal 1.02em OpenSans-Bold;
 }
 
 .italic,i {
-  font: normal 1.0em OpenSans-Italic;
+  font: normal 1.02em OpenSans-Italic;
 }
 
 b i, i b {
-  font: normal 1.0em OpenSans-BoldItalic;
+  font: normal 1.02em OpenSans-BoldItalic;
 }
 
 strong,em {
-  font: normal 1.0em OpenSans-Semibold;
+  font: normal 1.02em OpenSans-Semibold;
 }
 
 i strong,i em, strong i,em i {
-  font: normal 1.0em OpenSans-SemiboldItalic;
+  font: normal 1.02em OpenSans-SemiboldItalic;
 }
 
 pre {
@@ -83,6 +83,7 @@ th, td {
   box-shadow: 0px 0px 5px 1px #000;
   background-color: #FFFFFF;
   padding: 10px;
+  text-align: center;
 }
 
 .folders {
@@ -251,6 +252,44 @@ div#footer {
   color: #AAAAAA;
 }
 
+#error {
+  display: none;
+  background-color: #bf7c7c1a;
+}
+
 #errorMessages {
   font-size: 0.65em;
+}
+
+#stuff {
+  display: none;
+}
+
+span.nameError {
+  font-family: mono !important;
+  font-size: 1.3em;
+  margin: 20px;
+  padding: 10px;
+  background-color: #cccccc;
+  box-shadow: 0px 0px 5px 1px #000 inset;
+  display: inline-block;
+}
+
+.illChar {
+  background-color: #F54653;
+  color: #EEEEEE;
+  font-family: mono;
+}
+
+form#setPasswd {
+  text-align: center;
+}
+
+table.fields {
+  margin: 0px auto;
+  text-align: right;
+}
+
+table.fields td {
+  padding: 20px 10px;
 }

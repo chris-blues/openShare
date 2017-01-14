@@ -6,7 +6,7 @@
 <title>share <?php echo $_SERVER["SERVER_NAME"]; ?></title>
 </head>
 <?php
-$debug = false;
+//$debug = false;
 $debug = true;
 
 //error_reporting(E_ALL);

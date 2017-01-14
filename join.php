@@ -100,78 +100,33 @@ if ($_GET["job"] == "newHtpasswd")
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>share <?php echo $_SERVER["SERVER_NAME"]; ?></title>
-<script type="text/javascript">
-
-var usernames = [
-<?php $c = 0; foreach ($user as $key => $value) { if ($c == 0) { echo "\"$value\""; } else { echo ",\n\"$value\""; } $c++; } ?>
-];
-
-function checkInput ()
-  {
-   var error = false;
-   name = document.getElementById("name").value;
-   document.getElementById("error").innerHTML = "";
-   for (var i = 0; i < usernames.length; i++)
-     {
-      illChar = name.match(/[^A-Za-z0-9_.-]/g);
-      if (illChar != null)
-        {
-         error = true;
-         namestring = name.replace(/[^A-Za-z0-9_.-]/g, function markIllChar(x) { return '<b><i><span style="background-color: #FA6543;">' + x + '</span></i></b>'; });
-         document.getElementById("error").style.display = "block";
-         document.getElementById("error").innerHTML += "<?php echo gettext("This name contains illegal characters. Use only letters, numbers and . - _") . "<br>" . gettext("Illegal characters used:") . " "; ?>" + namestring + "<br>\n";
-        }
-      if (usernames[i] == name)
-        {
-         error = true;
-         document.getElementById("error").style.display = "block";
-         document.getElementById("error").innerHTML += "<?php echo gettext("This name is already used. Please choose another!"); ?><br>\n";
-	}
-     }
-   passwd = document.getElementById('passwd');
-   confirmPasswd = document.getElementById('confirmPasswd');
-   if (passwd.value == confirmPasswd.value && passwd.value != "" && document.getElementById('name').value != "")
-     {  }
-   else
-     {
-      error = true;
-      passwd.style.backgroundColor = "red";
-      passwd.value = "";
-      confirmPasswd.style.backgroundColor = "red";
-      confirmPasswd.value = "";
-      document.getElementById("error").style.display = "block";
-      document.getElementById("error").innerHTML += "<?php echo gettext("The passwords don't match! Please try again!"); ?><br>\n";
-     }
-   if (passwd.value.length < 5)
-     {
-      error = true;
-      passwd.style.backgroundColor = "red";
-      passwd.value = "";
-      confirmPasswd.style.backgroundColor = "red";
-      confirmPasswd.value = "";
-      document.getElementById("error").style.display = "block";
-      document.getElementById("error").innerHTML += "<?php echo gettext("The password is too short! Please try again (min 6 characters)!"); ?><br>\n";
-     }
-   if (error != true) document.getElementById("setPasswd").submit();
-  }
-</script>
+<link rel="stylesheet" href=".style.css" type="text/css">
+<script type="text/javascript" src=".js/join.js"></script>
 </head>
 <body>
-  <div id="main" style="text-align: center;">
+  <div id="stuff"
+       data-characters="<?php echo gettext("This name contains illegal characters. Use only letters, numbers and . - _") ?>"
+       data-charactersUsed="<?php echo gettext("Illegal characters used:"); ?>"
+       data-nameAlreadyUsed="<?php echo gettext("This name is already used. Please choose another!"); ?>"
+       data-pwMismatch="<?php echo gettext("The passwords don't match! Please try again!"); ?>"
+       data-pwTooShort="<?php echo gettext("The password is too short! Please try again (min 6 characters)!"); ?>">
+     <?php $c = 0; foreach ($user as $key => $value) { echo "<div class=\"usernames\" data-name=\"$value\"></div>"; } ?>
+  </div>
+  <div id="main">
     <h1><?php echo gettext("Enter your data"); ?></h1>
     <form id="setPasswd" action="join.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
       <input type="hidden" name="job" value="addUser">
       <input type="hidden" name="hash" value="EMPTY">
       <div>
-        <table border="0" style="margin: 0px auto;">
+        <table border="0" class="fields">
           <tr><td><?php echo gettext("name:") . "<br>(" . gettext("allowed characters are:") . " a-z A-Z 0-9 -_.)"; ?></td><td><input id="name" type="text" name="name" value=""></td></tr>
           <tr><td><?php echo gettext("email:"); ?></td><td><input id="email" type="text" name="email" value=""></td></tr>
           <tr><td><?php echo gettext("password:") . "<br>(" . gettext("min. 6 characters") . ")"; ?></td><td><input id="passwd" type="password" name="passwd" onfocus="document.getElementById('passwd').backgroundColor = 'white';"></td></tr>
           <tr><td><?php echo gettext("confirm password:"); ?></td><td><input id="confirmPasswd" type="password" name="passwdConfirm" onfocus="document.getElementById('confirmPasswd').backgroundColor = 'white';"></td></tr>
         </table>
       </div>
-      <button type="button" onclick="checkInput();">OK</button>
-      <div id="error" style="display: none; background-color: red;">
+      <button type="button" id="checkAndSubmit">OK</button>
+      <div id="error">
         <!-- Error messages will go here -->
       </div>
     </form>
@@ -251,9 +206,10 @@ if ($_POST["job"] == "newPasswd")
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>share <?php echo $_SERVER["SERVER_NAME"]; ?></title>
+<link rel="stylesheet" href=".style.css" type="text/css">
 </head>
 <body>
-  <div id="main" style="text-align: center;">
+  <div id="main">
     <?php echo gettext("<h1>There was some error!</h1>\n
     <p>Most propably your link in the mail was corrupted. Some email-clients do break longer lines, and in the process break links. Try to copy and paste the whole link into your browser by hand!</p>\n
     <p>Another possibility is, that something changed on the server. If you already tried the suggestion above, then please contact the admin, to check if your hash is intact and still in the users file!</p>\n"); ?>
@@ -273,7 +229,7 @@ if (isset($_GET["verification"]))
 
    foreach ($queue as $key => $value)
      {
-      if (strncmp($value, "#", 1) == 0) continue; 		// Leave comments alone!
+      if (strncmp($value, "#", 1) == 0) continue; 	// Leave comments alone!
       if (strncmp($value, $email, strlen($email)) == 0)	// We found an email-match!
         {
          $emailInQueue = true;
@@ -295,78 +251,33 @@ if (isset($_GET["verification"]))
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>share <?php echo $_SERVER["SERVER_NAME"]; ?></title>
-<script type="text/javascript">
-
-var usernames = [
-<?php $c = 0; foreach ($user as $key => $value) { if ($c == 0) { echo "\"$value\""; } else { echo ",\n\"$value\""; } $c++; } ?>
-];
-
-function checkInput ()
-  {
-   var error = false;
-   name = document.getElementById("name").value;
-   document.getElementById("error").innerHTML = "";
-   for (var i = 0; i < usernames.length; i++)
-     {
-      illChar = name.match(/[^A-Za-z0-9_.-]/g);
-      if (illChar != null)
-        {
-         error = true;
-         namestring = name.replace(/[^A-Za-z0-9_.-]/g, function markIllChar(x) { return '<b><i><span style="background-color: #FA6543;">' + x + '</span></i></b>'; });
-         document.getElementById("error").style.display = "block";
-         document.getElementById("error").innerHTML += "<?php echo gettext("This name contains illegal characters. Use only letters, numbers and . - _") . "<br>" . gettext("Illegal characters used:") . " "; ?>" + namestring + "<br>\n";
-        }
-      if (usernames[i] == name)
-        {
-         error = true;
-         document.getElementById("error").style.display = "block";
-         document.getElementById("error").innerHTML += "<?php echo gettext("This name is already used. Please choose another!"); ?><br>\n";
-	}
-     }
-   passwd = document.getElementById('passwd');
-   confirmPasswd = document.getElementById('confirmPasswd');
-   if (passwd.value == confirmPasswd.value && passwd.value != "" && document.getElementById('name').value != "")
-     {  }
-   else 
-     {
-      error = true;
-      passwd.style.backgroundColor = "red";
-      passwd.value = "";
-      confirmPasswd.style.backgroundColor = "red";
-      confirmPasswd.value = "";
-      document.getElementById("error").style.display = "block";
-      document.getElementById("error").innerHTML += "<?php echo gettext("The passwords don't match! Please try again!"); ?><br>\n";
-     }
-   if (passwd.value.length < 5)
-     {
-      error = true;
-      passwd.style.backgroundColor = "red";
-      passwd.value = "";
-      confirmPasswd.style.backgroundColor = "red";
-      confirmPasswd.value = "";
-      document.getElementById("error").style.display = "block";
-      document.getElementById("error").innerHTML += "<?php echo gettext("The password is too short! Please try again (min 6 characters)!"); ?><br>\n";
-     }
-   if (error != true) document.getElementById("setPasswd").submit();
-  }
-</script>
+<link rel="stylesheet" href=".style.css" type="text/css">
+<script type="text/javascript" src=".js/join.js"></script>
 </head>
 <body>
-  <div id="main" style="text-align: center;">
+  <div id="stuff"
+       data-characters="<?php echo gettext("This name contains illegal characters. Use only letters, numbers and . - _") ?>"
+       data-charactersUsed="<?php echo gettext("Illegal characters used:"); ?>"
+       data-nameAlreadyUsed="<?php echo gettext("This name is already used. Please choose another!"); ?>"
+       data-pwMismatch="<?php echo gettext("The passwords don't match! Please try again!"); ?>"
+       data-pwTooShort="<?php echo gettext("The password is too short! Please try again (min 6 characters)!"); ?>">
+     <?php $c = 0; foreach ($user as $key => $value) { echo "<div class=\"usernames\" data-name=\"$value\"></div>"; } ?>
+  </div>
+  <div id="main">
     <h1><?php echo gettext("Enter your data"); ?></h1>
     <form id="setPasswd" action="join.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
       <input type="hidden" name="job" value="addUser">
       <input type="hidden" name="email" value="<?php echo $email; ?>">
       <input type="hidden" name="hash" value="<?php echo $hash; ?>">
       <div>
-        <table border="0" style="margin: 0px auto;">
+        <table border="0" class="fields">
           <tr><td><?php echo gettext("name:") . "<br>(" . gettext("allowed characters are:") . " a-z A-Z 0-9 -_.)"; ?></td><td><input id="name" type="text" name="name" value=""></td></tr>
           <tr><td><?php echo gettext("password:") . "<br>(" . gettext("min. 6 characters") . ")"; ?></td><td><input id="passwd" type="password" name="passwd" onfocus="document.getElementById('passwd').backgroundColor = 'white';"></td></tr>
           <tr><td><?php echo gettext("confirm password:"); ?></td><td><input id="confirmPasswd" type="password" name="passwdConfirm" onfocus="document.getElementById('confirmPasswd').backgroundColor = 'white';"></td></tr>
         </table>
       </div>
-      <button type="button" onclick="checkInput();">OK</button>
-      <div id="error" style="display: none; background-color: red;">
+      <button type="button" id="checkAndSubmit">OK</button>
+      <div id="error">
         <!-- Error messages will go here -->
       </div>
     </form>
@@ -420,43 +331,31 @@ if (isset($_GET["job"]) and $_GET["job"] == "resetPasswd")
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>share <?php echo $_SERVER["SERVER_NAME"]; ?></title>
-<script type="text/javascript">
-
-function checkInput ()
-  {
-   var error = false;
-   passwd = document.getElementById('passwd');
-   confirmPasswd = document.getElementById('confirmPasswd');
-   if (passwd.value == confirmPasswd.value && passwd.value != "" && document.getElementById('name').value != "")
-     {  }
-   else 
-     {
-      error = true;
-      passwd.style.backgroundColor = "red";
-      passwd.value = "";
-      confirmPasswd.style.backgroundColor = "red";
-      confirmPasswd.value = "";
-      document.getElementById("error").style.display = "block";
-      document.getElementById("error").innerHTML = "<?php echo gettext("The passwords don't match! Please try again!"); ?>";
-     }
-   if (error != true) document.getElementById("setPasswd").submit();
-  }
-</script>
+<link rel="stylesheet" href=".style.css" type="text/css">
+<script type="text/javascript" src=".js/join.js"></script>
 </head>
 <body>
-  <div id="main" style="text-align: center;">
+  <div id="stuff"
+       data-characters="<?php echo gettext("This name contains illegal characters. Use only letters, numbers and . - _") ?>"
+       data-charactersUsed="<?php echo gettext("Illegal characters used:"); ?>"
+       data-nameAlreadyUsed="<?php echo gettext("This name is already used. Please choose another!"); ?>"
+       data-pwMismatch="<?php echo gettext("The passwords don't match! Please try again!"); ?>"
+       data-pwTooShort="<?php echo gettext("The password is too short! Please try again (min 6 characters)!"); ?>">
+     <?php $c = 0; foreach ($user as $key => $value) { echo "<div class=\"usernames\" data-name=\"$value\"></div>"; } ?>
+  </div>
+  <div id="main">
     <h1><?php echo gettext("Enter your data"); ?></h1>
     <form id="setPasswd" action="join.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
       <input type="hidden" name="job" value="newPasswd">
       <input type="hidden" name="name" value="<?php echo $concerningUser["name"]; ?>">
       <div>
-        <table border="0" style="margin: 0px auto;">
+        <table border="0" class="fields">
           <tr><td><?php echo gettext("new password:"); ?></td><td><input id="passwd" type="password" name="passwd" onfocus="document.getElementById('passwd').backgroundColor = 'white';"></td></tr>
           <tr><td><?php echo gettext("confirm password:"); ?></td><td><input id="confirmPasswd" type="password" name="passwdConfirm" onfocus="document.getElementById('confirmPasswd').backgroundColor = 'white';"></td></tr>
         </table>
       </div>
-      <button type="submit" onclick="checkInput();">OK</button>
-      <div id="error" style="display: none; background-color: red;">
+      <button type="button" id="checkAndSubmit">OK</button>
+      <div id="error">
         <!-- Error messages will go here -->
       </div>
     </form>
@@ -478,7 +377,7 @@ if (!isset($_GET["verification"]) and !isset($_GET["job"]) and !isset($_POST["jo
 <link rel="stylesheet" href=".style.css" type="text/css">
 </head>
 <body>
-  <div id="main" style="text-align: center;">
+  <div id="main">
     <?php echo gettext("<h1>Sorry, you're not allowed to enter!</h1>\n
     <p>Maybe something went wrong (e.g. you waited too long to come here, or someone already removed you again from our waiting list).</p>\n
     <p>Ask your admin or invitor to add you again, if you think you should be allowed in here.</p>\n"); ?>
