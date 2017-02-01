@@ -492,10 +492,8 @@ if (!strlen($phpErrorMsg) > 1 and $_POST["job"] != "downloadZip") echo "<body>\n
             <div id="PasswdBox" class="userMenuBox">
               <form id="changePasswd" action="index.php?dir=<?php echo $path; ?>" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
                 <input type="hidden" name="job" value="changePasswd">
-                <label for="newPasswd"><?php echo gettext("new password:"); ?></label>
-                <input id="newPasswd" class="inputFieldSettings" type="password" name="newPasswd"><br>
-                <label for="confirmPasswd"><?php echo gettext("confirm password:"); ?></label>
-                <input id="confirmPasswd" class="inputFieldSettings" type="password" name="newPasswdConfirm"><br>
+                <label for="newPasswd"><?php echo gettext("new password:"); ?></label><input id="newPasswd" class="inputFieldSettings" type="password" name="newPasswd"><br>
+                <label for="confirmPasswd"><?php echo gettext("confirm password:"); ?></label><input id="confirmPasswd" class="inputFieldSettings" type="password" name="newPasswdConfirm"><br>
                 <button type="submit" onclick="this.form.submit();"><?php echo gettext("change password"); ?></button>
               </form>
             </div>
