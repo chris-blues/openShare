@@ -10,7 +10,7 @@
     $path = str_replace(".logout.php", "", $_SERVER["SCRIPT_NAME"]);
     echo "<h1>Good bye {$_POST["name"]}!</h1>\n
     You have been logged out!\n
-    <a href=\"{$_SERVER["HTTP_X_FORWARDED_PROTO"]}://{$_SERVER["HTTP_HOST"]}{$path}index.php\">\n
+    <a href=\"https://{$_SERVER["SERVER_NAME"]}{$path}index.php\">\n
       Return to login\n
     </a>"; ?>
   </div>

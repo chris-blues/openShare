@@ -12,8 +12,6 @@ $(document).ready(function() {
         'cyclic' : 'true'
     });
 });
-</script>
-<script type="text/javascript">
 
 function getUnit(index)
  {
@@ -89,7 +87,7 @@ function uploadProgress(evt)
   var prettyTime = "";
   var showHours = false;
 
-  var now = (new Date()).getTime(); 
+  var now = (new Date()).getTime();
   var elapsedtime = now - startTime;
   elapsedtime = elapsedtime / 1000;
   var eta = ((evt.total / evt.loaded) * elapsedtime) - elapsedtime;
@@ -131,12 +129,12 @@ function uploadProgress(evt)
       }
     transferredBytes += getUnit(iter);
 
-    document.getElementById('progressNumber').innerHTML = transferredBytes + "/" + totalBytes + " - <b>" + percentComplete.toString() + '%</b> - ' + prettyTime + " <?php echo gettext("remaining"); ?>";
+    document.getElementById('progressNumber').innerHTML = transferredBytes + "/" + totalBytes + " - <b>" + percentComplete.toString() + '%</b> - ' + prettyTime + " remaining";
     document.getElementById('progressbar').style.width = percentComplete.toString() + '%';
    }
   else
    {
-    document.getElementById('progressNumber').innerHTML = '<?php echo gettext("unable to compute"); ?>';
+    document.getElementById('progressNumber').innerHTML = 'unable to compute';
    }
  }
 
@@ -150,12 +148,12 @@ function uploadComplete(evt)
 
 function uploadFailed(evt)
  {
-  alert("<?php echo gettext("There was an error attempting to upload the file."); ?>");
+  alert("There was an error attempting to upload the file.");
  }
 
 function uploadCanceled(evt)
  {
-  alert("<?php echo gettext("The upload has been canceled by the user or the browser dropped the connection."); ?>");
+  alert("The upload has been canceled by the user or the browser dropped the connection.");
  }
 
 
@@ -175,7 +173,7 @@ function switchJob (job)
  }
 
 function DeleteCheck () {
-  var chk = window.confirm("<?php echo gettext("Do you really want to delete this???"); ?>");
+  var chk = window.confirm("Do you really want to delete this???");
   return (chk);
 }
 
@@ -213,5 +211,5 @@ function toggleCheckboxFile()
 
 function displayErrorMessages()
   {
-   alert("<?php echo str_replace("\n", "\\n", strip_tags($phpErrorMsg)); ?>");
+   alert("Error!");
   }

@@ -23,6 +23,6 @@ foreach ($_FILES["files"]["name"] as $key => $value)
    if (!move_uploaded_file($_FILES["files"]["tmp_name"][$key], $filename)) $error = true;
    chmod($filename,0755);
   }
-if ($error) echo gettext("Error!\n");
-else echo gettext("OK!\n");
+if ($error) echo "Error!\n";
+else echo "OK!\n";
 ?>

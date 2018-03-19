@@ -113,14 +113,14 @@ if ($noPasswd and !isset($_POST["passwd"])) // diplay simple html page to enter 
   redirecting to <a href="join.php?job=newHtpasswd">join.php</a> to input user data
 </body>
 </html>
-   <?php 
+   <?php
    if ($_POST["job"] != "init" or !isset($_POST["job"])) exit;
   }
 
 if ($_POST["job"] == "init")
   {
    unset($htpasswd);
-   if (strcmp($_POST["passwd"], $_POST["passwdConfirm"]) != 0) 
+   if (strcmp($_POST["passwd"], $_POST["passwdConfirm"]) != 0)
      {
       $phpErrorMsg .= "passwords don't match!\n";
       //foreach ($_POST as $key => $value) echo "\$_POST[$key] =&gt; $value<br>\n";
@@ -194,12 +194,12 @@ if ($_POST["job"] == "del")
 if ($_POST["job"] == "rename")
   {
   // $path = realpath("./");
-   if(rename("$cwd/$path/" . $_POST["oldFilename"], "$cwd/$path/" . $_POST["newFilename"])) 
+   if(rename("$cwd/$path/" . $_POST["oldFilename"], "$cwd/$path/" . $_POST["newFilename"]))
      {
       $perms = getFilePerms("$cwd/$path/" . $_POST["newFilename"]);
       if ($perms != "0755") { chmod ("$cwd/$path/" . $_POST["newFilename"], 0755); }
      }
-   else 
+   else
      {
       $phpErrorMsg .= "Error renaming $cwd/$path/{$_POST["oldFilename"]}\n";
       $error["rename"] = true;
@@ -456,10 +456,10 @@ $FolderStructure = readDirStructure();
 <script type="text/javascript" src=".js/jquery.fancybox-1.3.4/fancybox/jquery.easing-1.3.pack.js"></script>
 <script type="text/javascript" src=".js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <script type="text/javascript" src=".js/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-<link rel="stylesheet" type="text/css" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<link rel="stylesheet" type="text/css" href=".js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 <script type="text/javascript" src=".js/openShare.js"></script>
 </head>
-<?php 
+<?php
 if (strlen($phpErrorMsg) > 1) echo "<body onload=\"displayErrorMessages();\">\n";
 
 if ($_POST["job"] == "downloadZip") { ?><body onload="document.getElementById('downloadZipFile').submit();">
@@ -474,7 +474,7 @@ if (!strlen($phpErrorMsg) > 1 and $_POST["job"] != "downloadZip") echo "<body>\n
   $folders = explode("/", $path);
 ?>
     <div class="shadow folders"><a href="index.php"><?php echo $_SERVER["HTTP_HOST"] . "/$forward"; ?></a></div>
-<?php foreach ($folders as $key => $value) 
+<?php foreach ($folders as $key => $value)
               {
                if ($value == "" or !isset($value) or $value == $forward) { $last = $value; continue; }
                echo "    <div class=\"shadow folders\"><a href=\"index.php?dir="; if ($last != "" and isset($last)) { echo "$last/"; } echo "$value\">$value</a></div>\n";
@@ -521,7 +521,7 @@ if (!strlen($phpErrorMsg) > 1 and $_POST["job"] != "downloadZip") echo "<body>\n
                 <select name="name">
 <?php
 foreach ($user as $key => $name)
-  { 
+  {
    echo "                  <option value=\"$name\">$name";
    if (in_array($name, $admins)) echo " (admin)";
    echo "</option>\n";
@@ -684,7 +684,7 @@ foreach ($dir as $key => $filename) // sort by dirs and files
             <td></td>
             <td></td>
             <td>
-              <?php if ($path != $forward) 
+              <?php if ($path != $forward)
                 { ?><a href="index.php?dir=<?php echo $path . "/.."; ?>">..</a><?php }
 	      ?>
 	    </td>
@@ -800,7 +800,7 @@ foreach ($dir as $key => $filename)
   </div> <!-- end div id="main" -->
   <div id="footer">
     <b>
-<?php 
+<?php
 $totalUnit = 0;
 
 $totalfs = convertFileSize($totalFileSize);
@@ -811,7 +811,7 @@ $end = microtime(true);
 $proctime = $end - $start;
 $unit = 0;
 
-while ($proctime < 1) 
+while ($proctime < 1)
   {
    $proctime = $proctime * 1000;
    $unit++;

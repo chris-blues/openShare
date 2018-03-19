@@ -53,7 +53,7 @@ function populateHtaccess ($pathHtpasswd)
    $htaccess[] = "AuthName \"Login\"";
    $htaccess[] = "AuthType Basic";
    $htaccess[] = "AuthUserFile $pathHtpasswd";
-   $htaccess[] = "AuthGroupFile /dev/null";
+   $htaccess[] = "#AuthGroupFile /dev/null";
    $htaccess[] = "Require valid-user";
    $htaccess[] = "SetEnvIf Request_URI \"(.logout\.php)$\"  allow";
    $htaccess[] = "SetEnvIf Request_URI \"(join\.php)$\"  allow";
@@ -79,11 +79,11 @@ function readDirStructure($path = "")
 
    $folderContent = scandir($thisFolder);
 
-   foreach ($folderContent as $key => $value) 
+   foreach ($folderContent as $key => $value)
      {
       $value = trim($value);
       $perms = getFilePerms("$thisFolder/$value");
-      if ($perms != "0755") { chmod ("$thisFolder/$value", 0755); }
+      if ($perms != "0775") { chmod ("$thisFolder/$value", 0775); }
 
       if (!is_dir("$thisFolder/$value") or strncmp($value,".",1) == 0)
         {
@@ -137,7 +137,7 @@ function convertFileSize ($filesize)
 
    switch ($unit)
      {
-      case 0: 
+      case 0:
         $unit = "Byte";
         break;
       case 1:
